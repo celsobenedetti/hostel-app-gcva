@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  hostel-app-database:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=myDB
+    ports:
+      - '3306:3306'
+    volumes:
+      - my-db:/var/lib/mysql
+  hostel-app-server:
+    image: payara/server-full
+    ports:
+      - '4848:4848'
+      - '8080:8080'
+      - '8181:8181'
+    restart: always
+    volumes:
+      - ./deployments:/opt/payara41/deployments
+      - ./logs:/opt/payara41/glassfish/domains/payaradomain/logs
+      - ./vvvConfiguration:/opt/vdz/config
+    working_dir: /opt/payara41/bin/
+    environment:
+      - PAYARA_DOMAIN=payaradomain
+volumes:
+  my-db:
