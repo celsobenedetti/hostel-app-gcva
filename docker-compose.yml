@@ -4,11 +4,11 @@ services:
     image: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=myDB
+      - MYSQL_DATABASE=hostelDB
     ports:
       - '3306:3306'
     volumes:
-      - my-db:/var/lib/mysql
+      - mysql-data:/var/lib/mysql
   hostel-app-server:
     image: payara/server-full
     ports:
@@ -24,4 +24,4 @@ services:
     environment:
       - PAYARA_DOMAIN=payaradomain
 volumes:
-  my-db:
+  mysql-data:
