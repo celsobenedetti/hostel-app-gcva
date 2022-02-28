@@ -1,5 +1,5 @@
 init: docker-compose.yml .env.example;
-	mv .env.example .env; \
+	cp .env.example .env; \
 	sudo docker-compose up -d; \
 
 run: docker-compose.yml;
