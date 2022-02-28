@@ -3,25 +3,15 @@ services:
   hostel-app-database:
     image: mysql
     environment:
-<<<<<<< HEAD
       - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWD}
       - MYSQL_DATABASE=${MYSQL_DB}
-=======
-      - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=hostelDB
->>>>>>> d66cbd5f2de5de08289f2bc34dc168f492e89c3a
     ports:
-      - '${MYSQL_PORT}:${MYSQL_PORT}'
+      - '${MYSQL_PORT}:3306'
     volumes:
-<<<<<<< HEAD
       - ./mysql-dump:/docker-entrypoint-initdb.d
-      - my-db:/var/lib/mysql
- 
- hostel-app-server:
-=======
       - mysql-data:/var/lib/mysql
+ 
   hostel-app-server:
->>>>>>> d66cbd5f2de5de08289f2bc34dc168f492e89c3a
     image: payara/server-full
     ports:
       - '${PAYARA_MANAGER_PORT}:${PAYARA_MANAGER_PORT}'
@@ -36,8 +26,5 @@ services:
     environment:
       - PAYARA_DOMAIN=${PAYARA_DOMAIN}
 volumes:
-<<<<<<< HEAD
-  my-db:
-=======
+
   mysql-data:
->>>>>>> d66cbd5f2de5de08289f2bc34dc168f492e89c3a
