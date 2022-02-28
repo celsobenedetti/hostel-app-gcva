@@ -8,66 +8,44 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
 
-<img src="exemplo-image.png" alt="exemplo imagem">
+<img src="https://s.tmimgcdn.com/scr/1200x750/57600/hostel-modelo-de-site-html5-de-varias-paginas-de-viagens_57677-2-original.jpg" alt="exemplo imagem">
 
-> Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
+> Web Application em desenvolvimento para gerenciamente de clientes por parte dos funcionário do Host Sparkling Water
 
-### Ajustes e melhorias
-
-O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
-
-- [x] Tarefa 1
-- [x] Tarefa 2
-- [x] Tarefa 3
-- [ ] Tarefa 4
-- [ ] Tarefa 5
 
 ## 💻 Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 <!---Estes são apenas requisitos de exemplo. Adicionar, duplicar ou remover conforme necessário--->
 
-* Você instalou a versão mais recente de `<linguagem / dependência / requeridos>`
-* Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
-* Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
+* Você instalou a versão mais recente de docker ([download](https://docs.docker.com/get-docker/)) e docker-compose ([download]( https://docs.docker.com/compose/install/))
+* Você possui uma IDE adequada para Web Applications do Jakarte EE 8 
+* Você possui o git instalado ([download](https://git-scm.com/downloads))
 
-## 🚀 Instalando hostel-app-gcva
+## 🚀 Getting started
 
 Para instalar o hostel-app-gcva, siga estas etapas:
 
-Linux e macOS:
-
+1. Faça download do repositório remoto
 ```
-<comando_de_instalação>
+git clone https://github.com/celso-patiri/hostel-app-gcva.git
 ```
-
-Windows:
-
+2. Dentro do diretório em que o repositório foi iniciado, execute na primeira vez (isso inicia os containers mysql e payara-server):
 ```
-<comando_de_instalação>
+make init
 ```
-
-## ☕ Usando hostel-app-gcva
-
-Para usar <nome_do_projeto>, siga estas etapas:
-
-```
-<exemplo_de_uso>
-```
-
-Adicione comandos de execução e exemplos que você acha que os usuários acharão úteis. Fornece uma referência de opções
-para pontos de bônus!
+> Observações: a primeira vez tende a ser demorada, pois é necessário download de diversar dependências
 
 ## 📫 Contribuindo hostel-app-gcva
 
 <!---Se o seu README for longo ou se você tiver algum processo ou etapas específicas que deseja que os contribuidores sigam, considere a criação de um arquivo CONTRIBUTING.md separado--->
-Para contribuir com <nome_do_projeto>, siga estas etapas:
+Para contribuir com hostel-app-gcva, siga estas etapas:
 
 1. Bifurque este repositório.
 2. Crie um branch: `git checkout -b <nome_branch>`.
 3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
-4. Envie para o branch original: `git push origin <nome_do_projeto> / <local>`
-5. Crie a solicitação de pull.
+4. Envie para o branch original: `git push origin <nome_branch>`
+5. Crie a solicitação de pull dentro do GitHub.
 
 Como alternativa, consulte a documentação do GitHub
 em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
