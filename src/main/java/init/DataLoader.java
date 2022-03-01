@@ -5,9 +5,15 @@ import entity.Guest;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import java.util.Arrays;
+import java.util.List;
 
-public class DataLoader {
+public class DataLoader{
+
+    private final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");
+    private final EntityManager entityManager = entityManagerFactory.createEntityManager();
+
     private final Guest[] guests = {
             new Guest("Jay", "Gatsby", "jay@gmail.com", "+1-205-555-0178", " 1187 Fleming Street", "United States", "AL" ),
             new Guest("Holden", "Caulfield", "holden@mit.edu", "+1-303-555-0137", " 3998 Davis Lane", "United States", "CO" ),
@@ -33,18 +39,15 @@ public class DataLoader {
     };
 
     public  void loadDataInDatabase(){
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-
-        loadGuests(entityManager);
+        entityManager.getTransaction().begin();
+        loadGuests();
+        entityManager.getTransaction().commit();
 
         entityManager.close();
         entityManagerFactory.close();
     }
 
-    public void loadGuests(EntityManager entityManager){
-        entityManager.getTransaction().begin();
+    public void loadGuests(){
         Arrays.stream(guests).forEach(entityManager::persist);
-        entityManager.getTransaction().commit();
     }
 }
