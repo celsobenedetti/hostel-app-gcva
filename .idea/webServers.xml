@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="08e1eef5-015d-48f5-87f0-e540c7162942" name="payara-local-teste" url="http://localhost:8080">
+        <fileTransfer mountedRoot="$PROJECT_DIR$/deployments" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>
