@@ -3,4 +3,4 @@
 deployments/
 logs/
 vvvConfiguration/
-.env
+docker/
