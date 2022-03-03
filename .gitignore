@@ -1,3 +1,4 @@
 # Especific for this project
 
 docker/
+.vscode/
