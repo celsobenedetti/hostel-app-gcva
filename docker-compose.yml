@@ -8,23 +8,22 @@ services:
     ports:
       - '${MYSQL_PORT}:3306'
     volumes:
-      - ./mysql-dump:/docker-entrypoint-initdb.d
+      - ./config/mysql-dump:/docker-entrypoint-initdb.d
       - mysql-data:/var/lib/mysql
  
   hostel-app-server:
     image: payara/server-full
     ports:
-      - '${PAYARA_MANAGER_PORT}:${PAYARA_MANAGER_PORT}'
-      - '${PAYARA_DEPLOYMENT_PORT}:${PAYARA_DEPLOYMENT_PORT}'
+      - '${PAYARA_MANAGER_PORT}:4848'
+      - '${PAYARA_DEPLOYMENT_PORT}:8080'
       - '8181:8181'
     restart: always
     volumes:
-      - ./deployments:/opt/payara41/deployments
-      - ./logs:/opt/payara41/glassfish/domains/payaradomain/logs
-      - ./vvvConfiguration:/opt/vdz/config
+      - ${PAYARA_LOCAL_DIR}/deployments:/opt/payara41/deployments
+      - ${PAYARA_LOCAL_DIR}/logs:/opt/payara41/glassfish/domains/payaradomain/logs
+      - ${PAYARA_LOCAL_DIR}/vvvConfiguration:/opt/vdz/config
     working_dir: /opt/payara41/bin/
     environment:
       - PAYARA_DOMAIN=${PAYARA_DOMAIN}
 volumes:
-
   mysql-data:

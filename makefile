@@ -1,12 +1,14 @@
 init: docker-compose.yml .env.example;
 	cp .env.example .env; \
-	sudo docker-compose up -d; \
+	docker-compose up -d; \
 
 run: docker-compose.yml;
-	sudo docker-compose up -d;
+	docker-compose up -d;
 
 drop: ;
-	sudo docker-compose stop; \
-	sudo docker-compose rm; \
-	sudo docker volume rm hostel-app-gcva_mysql-data; \
+	docker-compose stop; \
+	docker-compose rm; \
+	docker volume rm hostel-app-gcva_mysql-data; \
+	rm .env; \
+	rmdir docker; \
 
