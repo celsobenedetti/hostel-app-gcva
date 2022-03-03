@@ -18,7 +18,7 @@ deploy: ;
 	cp ./backend/target/backend-1.0-SNAPSHOT.war ${PAYARA_LOCAL_DIR}/deployments/backend.war; \
 	cp ./frontend/target/frontend-1.0-SNAPSHOT.war ${PAYARA_LOCAL_DIR}/deployments/frontend.war; \
 	docker exec -it hostel-app-gcva_hostel-app-server_1 /opt/payara41/bin/deploy_script.sh; \
-	echo -e "\nProcesso de deployment concluído com sucesso.\n"; \
+	echo -e "\nProcesso de deployment concluído com sucesso.\nAcesse a aplicação em http://localhost:8080/frontend"; \
 
 drop: docker-compose.yml .env docker;
 	docker-compose stop; \
