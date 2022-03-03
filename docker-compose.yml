@@ -22,6 +22,8 @@ services:
       - ${PAYARA_LOCAL_DIR}/deployments:/opt/payara41/deployments
       - ${PAYARA_LOCAL_DIR}/logs:/opt/payara41/glassfish/domains/payaradomain/logs
       - ${PAYARA_LOCAL_DIR}/vvvConfiguration:/opt/vdz/config
+      - ${PAYARA_LOCAL_DIR}/autodeploy:${AUTODEPLOY_DIR}
+      - ${PAYARA_LOCAL_DIR}/bin:/opt/payara41/bin/
     working_dir: /opt/payara41/bin/
     environment:
       - PAYARA_DOMAIN=${PAYARA_DOMAIN}
