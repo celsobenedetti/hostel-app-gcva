@@ -34,7 +34,17 @@ git clone https://github.com/celso-patiri/hostel-app-gcva.git
 ```
 make init
 ```
-> Observações: a primeira vez tende a ser demorada, pois é necessário download de diversar dependências
+> Observações: 
+> 1. A primeira vez tende a ser demorada, pois é necessário download de diversar dependências
+> 2. Se estiver em uma distro linux, e houver erro de permissão, tente adicionar sudo aos comandos make, exemplo:
+> 
+> Ao invés de:
+> 
+> `make init`
+> 
+> Tente: 
+> 
+> `sudo make init`
 
 ## 📫 Contribuindo hostel-app-gcva
 
