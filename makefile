@@ -6,7 +6,6 @@ init: docker-compose.yml .env;
 	docker-compose up -d; \
 	echo -e "\nAdicionando scripts...\n"; \
 	cp ./config/script/payara/*.sh ${PAYARA_LOCAL_DIR}/bin/; \
-	cp ./config/mysql-connector/*.jar ${PAYARA_LOCAL_DIR}/bin/; \
 	sudo chmod -R 777 ${PAYARA_LOCAL_DIR}; \
 	echo -e "\nPronto!\n"; \
 
