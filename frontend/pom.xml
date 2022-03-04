@@ -29,10 +29,10 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>3.3.2</version>
         <configuration>
-          <webappDirectory>/src/main/webapp</webappDirectory>
+          <webappDirectory>./src/main/webapp</webappDirectory>
           <webResources>
             <resource> 
-              <directory>/src/main/resources</directory> 
+              <directory>./src/main/resources</directory> 
             </resource> 
           </webResources>
         </configuration>
