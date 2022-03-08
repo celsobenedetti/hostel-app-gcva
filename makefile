@@ -8,12 +8,12 @@ init: docker-compose.yml .env;
 	cp ./config/script/payara/*.sh ${PAYARA_LOCAL_DIR}/bin/; \
 	sudo chmod -R 777 ${PAYARA_LOCAL_DIR}; \
 	echo -e "\nConvertendo caracteres de fim de linha...\n"; \
-	docker exec -it hostel-app-gcva_hostel-app-server_1 bash /opt/payara41/bin/convert_endline_character.sh; \
+	docker exec -it hostel-app-gcva_hostel-app-server_1 bash convert_endline_character.sh; \
 	echo -e "\nPronto!\n"; \
 
 #Configurar jdbc connector e connection pool
 payara_config:
-	docker exec -it hostel-app-gcva_hostel-app-server_1 /opt/payara41/bin/mysql_connection.sh; \
+	docker exec -it hostel-app-gcva_hostel-app-server_1 bash mysql_connection.sh; \
 	echo "\nReiniciando servidor...\n"; \
 	docker container restart hostel-app-gcva_hostel-app-server_1; \
 
@@ -39,7 +39,7 @@ build_frontend: ;
 deploy_frontend: build_frontend;
 	@echo -e "\nRealizando deploy 'frontend' em Payara Server Container\n"; \
 	cp ./frontend/target/frontend-1.0-SNAPSHOT.war ${PAYARA_LOCAL_DIR}/deployments/frontend.war; \
-	docker exec -it hostel-app-gcva_hostel-app-server_1 /opt/payara41/bin/deploy_frontend_script.sh; \
+	docker exec -it hostel-app-gcva_hostel-app-server_1 bash deploy_frontend_script.sh; \
 	echo -e "\nProcesso de deployment concluído com sucesso.\nAcesse a aplicação em http://localhost:8080/frontend"; \
 	echo -e "\nPronto!\n"; \
 
@@ -47,7 +47,7 @@ deploy_frontend: build_frontend;
 deploy_backend: build_backend;
 	@echo -e "\nRealizando deploy 'backend' em Payara Server Container\n"; \
 	cp ./backend/target/backend-1.0-SNAPSHOT.war ${PAYARA_LOCAL_DIR}/deployments/backend.war; \
-	docker exec -it hostel-app-gcva_hostel-app-server_1 /opt/payara41/bin/deploy_backend_script.sh; \
+	docker exec -it hostel-app-gcva_hostel-app-server_1 bash deploy_backend_script.sh; \
 	echo -e "\nProcesso de deployment concluído com sucesso.\nAcesse a aplicação em http://localhost:8080/backend"; \
 	echo -e "\nPronto!\n"; \
 
@@ -61,7 +61,7 @@ deploy_all: deploy_frontend deploy_backend;
 redeploy_frontend: build_frontend;
 	@echo -e "\nRealizando redeploy 'frontend' em Payara Server Container\n"; \
 	cp ./frontend/target/frontend-1.0-SNAPSHOT.war ${PAYARA_LOCAL_DIR}/deployments/frontend.war; \
-	docker exec -it hostel-app-gcva_hostel-app-server_1 /opt/payara41/bin/redeploy_frontend_script.sh; \
+	docker exec -it hostel-app-gcva_hostel-app-server_1 bash redeploy_frontend_script.sh; \
 	echo -e "\nProcesso de redeployment concluído com sucesso.\nAcesse a aplicação em http://localhost:8080/frontend"; \
 	echo -e "\nPronto!\n"; \
 
@@ -69,7 +69,7 @@ redeploy_frontend: build_frontend;
 redeploy_backend: build_backend;
 	@echo -e "\nRealizando redeploy 'backend' em Payara Server Container\n"; \
 	cp ./backend/target/backend-1.0-SNAPSHOT.war ${PAYARA_LOCAL_DIR}/deployments/backend.war; \
-	docker exec -it hostel-app-gcva_hostel-app-server_1 /opt/payara41/bin/redeploy_backend_script.sh; \
+	docker exec -it hostel-app-gcva_hostel-app-server_1 bash redeploy_backend_script.sh; \
 	echo -e "\nProcesso de redeployment concluído com sucesso.\nAcesse a aplicação em http://localhost:8080/backend"; \
 	echo -e "\nPronto!\n"; \
 
