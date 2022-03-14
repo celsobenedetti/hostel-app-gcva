@@ -1,0 +1,3 @@
+language = "html, css, js"
+run = ""
+#entrypoint = "./frontend/src/main/webapp/index.html"
