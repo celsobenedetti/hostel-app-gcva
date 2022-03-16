@@ -61,7 +61,7 @@ section * {
 
 }
 
-#customers tr:first-child {
+#customers thead tr{
   color: white;
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
@@ -79,7 +79,7 @@ section * {
   font-size: 15px;
 }
 
-.index {
+.table-index {
   color: #0047FF !important;
   font-weight: 600;
 }
