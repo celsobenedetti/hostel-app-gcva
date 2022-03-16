@@ -1,5 +1,5 @@
-function getElementTableFormat(data) {
-  return (
+getElementTableFormat = data =>
+   (
     `
     <tr>
     <td class="table-index">${data.id}</td>
@@ -20,7 +20,7 @@ function getElementTableFormat(data) {
   </tr>
   `
 )
-}
+
 
 
 function showListCustomers(data) {
