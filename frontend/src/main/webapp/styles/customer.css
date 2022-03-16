@@ -11,11 +11,12 @@ section * {
 }
 
 .options {
-  width: 100%;
+  width: 90vw;
+  min-width: 500px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 10px 0px;
+  justify-content:space-between;
+  margin: 10px auto;
   color: white;
   font-family: 'Poppins', sans-serif;
 
@@ -53,17 +54,16 @@ section * {
 #customers {
   background: white;
   width: 90vw;
-  min-width: 300px;
+  min-width: 500px;
   border: none;
   overflow: hidden;
-  border-radius: 5px;
   box-shadow: 0px 3px 10px rgba(0, 10, 10, 0.5);
 
 }
 
 #customers tr:first-child {
   color: white;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 15px;
   height: 40px;
   background: #0047FF;
@@ -71,7 +71,7 @@ section * {
 }
 
 #customers tr td {
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 15px;
   color: rgba(0, 0, 0, 0.8);
   text-align: center;
