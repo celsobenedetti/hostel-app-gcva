@@ -7,6 +7,16 @@ function getElementTableFormat(data) {
     <td>${data.last_name}</td>
     <td>${data.phone}</td>
     <td>${data.email}</td>
+    <td>
+    <div class="status-container">
+        <input type="checkbox" id="status" value="" check="${data.status || false}"/>
+        <div class="status-fake-button">
+          <div class="status-fake-button-mark">
+
+          </div>
+        </div>
+      </div>
+    </td>
   </tr>
   `
 )
