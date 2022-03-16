@@ -1,0 +1,50 @@
+
+.back-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  background: rgb(230, 230, 230);
+  color: #2562FF;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 1em;
+  border: none;
+  overflow: hidden;
+}
+
+.back-button div, .back-button img{
+  position: absolute;
+  transition: left .4s, right .4s;
+}
+
+
+.back-button img  {
+  right: 5px;
+}
+
+.back-button div  {
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0px;
+
+}
+
+.back-button:hover img  {
+  right: 75px;
+}
+
+.back-button:hover div  {
+  left: 20px;
+}
+
+.chevron-left {
+  position: relative;
+  height: 20px;
+  width: 20px;
+
+}
