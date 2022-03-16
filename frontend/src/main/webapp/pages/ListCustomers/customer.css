@@ -15,7 +15,7 @@ section * {
   min-width: 500px;
   display: flex;
   align-items: center;
-  justify-content:space-between;
+  justify-content: space-between;
   margin: 10px auto;
   color: white;
   font-family: 'Poppins', sans-serif;
@@ -51,6 +51,20 @@ section * {
 
 }
 
+#total-customers {
+  font-size: 10px;
+  font-weight: lighter;
+  color: rgba(0, 0, 0, 0.8) !important;
+  background: white;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+#total-customers span {
+  font-size: 10px;
+  font-weight: bold;
+  color: #0047FF !important;
+}
 .more-button {
   background: #0047FF;
   border: none;

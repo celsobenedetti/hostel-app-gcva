@@ -34,6 +34,10 @@ function showListCustomers(data) {
 
 }
 
+function showTotalCustomers(n) {
+  var totalCustomers = document.querySelector('#total-customers-value')
+  totalCustomers.innerText = n
+}
 
 async function init(){
   // dados que vão vir de uma requisição
@@ -81,4 +85,5 @@ async function init(){
       }
     ]
   showListCustomers(customers)
+  showTotalCustomers(customers.length)
 }
