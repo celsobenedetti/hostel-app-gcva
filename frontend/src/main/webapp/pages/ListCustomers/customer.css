@@ -13,16 +13,22 @@ section * {
 .options {
   width: 90vw;
   min-width: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
   font-family: 'Poppins', sans-serif;
 
 }
 
+#entries {
+  position: absolute;
+  left: 0px;
+}
+
 .options select{
+
   background: #0047FF;
   border: 1px solid  #0047FF;
   color: white;
@@ -52,6 +58,8 @@ section * {
 }
 
 #total-customers {
+  position: absolute;
+  right: 0px;
   font-size: 10px;
   font-weight: lighter;
   color: rgba(0, 0, 0, 0.8) !important;
