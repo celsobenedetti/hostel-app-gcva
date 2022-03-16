@@ -9,27 +9,33 @@
     <link rel="stylesheet" href="../../styles/status-button.css">
     <link rel="stylesheet" href="./customer.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://unpkg.com/axios@0.26.1/dist/axios.min.js"></script>
     <script type="text/javascript" src="./script.js"></script>
   </head>
   <body onload="init()">
     <header>
       <div id="top">
-        <!--button-back component-->
+        <!--back-button component-->
         <a href="../../index.html">
           <button type="button" name="button" class="back-button">
             <div> Home </div>
             <img class="chevron-left" src="../../assets/chevron-left.svg"/>
           </button>
         </a>
-        <!--button-back component-->
+        <!--back-button component-->
         <div class="title">
           Customers
         </div>
-        <a href="../RegisterCustomer/index.html">
-          <button type="button" name="button" class="more-button">
-            <img src="./../../assets/more.svg" alt="">
+        <div class="">
+          <a href="../RegisterCustomer/index.html">
+            <button type="button" name="more" class="more-button">
+              <img src="./../../assets/more.svg">
+            </button>
+          </a>
+          <button type="button" name="logout" class="more-button" onclick="logout()">
+            <img src="./../../assets/power-off.svg" width="20px">
           </button>
-        </a>
+        </div>
       </div>
       <div id="hostel-mark">
         Sparkling Water Hostel

@@ -51,6 +51,17 @@ section * {
 
 }
 
+.more-button {
+  background: #0047FF;
+  border: none;
+  width: 60px;
+  height: 40px;
+  color: white;
+  font-size: 30px;
+  border-radius: 20px;
+}
+
+
 #customers {
   background: white;
   width: 90vw;
@@ -77,6 +88,7 @@ section * {
   text-align: center;
   height: 30px;
   font-size: 15px;
+  overflow: auto;
 }
 
 .table-index {
