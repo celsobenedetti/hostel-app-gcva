@@ -39,6 +39,40 @@ function showTotalCustomers(n) {
   totalCustomers.innerText = n
 }
 
+const createButtonPag = (content) => {
+  const button = document.createElement('button')
+  button.setAttribute('class', 'button-pag'); //possivel erro
+  button.innerHTML = content;
+  button.onclick = () => {};
+  return button
+}
+function defineButtonsPagination(lengthData, lengthEntries) {
+  var containerPagination = document.querySelector('#pagination-buttons > .container-button-pag')
+  var nPages = Math.ceil(lengthData / lengthEntries)
+  containerPagination.innerHTML = ''
+  if (nPages <= 1) {
+    document.querySelectorAll('#pagination-buttons button').forEach(i => {
+      i.style.opacity = "0.8";
+      i.style.cursor = "no-drop";
+    }
+    )
+    return
+  }
+  for (let i = 1; i <= nPages; i++){
+    if (i <= 5)
+      containerPagination.appendChild(createButtonPag(i))
+    else {
+      containerPagination.innerHTML += `
+      <div class="pag-more">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>`
+    }
+  }
+
+}
+
 async function init(){
   // dados que vão vir de uma requisição
   // var {data: customers} = await axios.get("http://localhost:3001/customers")
@@ -86,4 +120,5 @@ async function init(){
     ]
   showListCustomers(customers)
   showTotalCustomers(customers.length)
+  defineButtonsPagination(customers.length, 10)
 }

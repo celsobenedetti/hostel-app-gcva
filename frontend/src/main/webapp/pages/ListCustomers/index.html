@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../../styles/global.css">
     <link rel="stylesheet" href="../../styles/header.css">
     <link rel="stylesheet" href="../../styles/back-button.css">
+    <link rel="stylesheet" href="../../styles/pagination-buttons.css">
     <link rel="stylesheet" href="../../styles/status-button.css">
     <link rel="stylesheet" href="./customer.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,7 @@
         <a href="../../index.html">
           <button type="button" name="button" class="back-button">
             <div> Home </div>
-            <img class="chevron-left" src="../../assets/chevron-left.svg"/>
+            <img class="chevron-left" src="../../assets/chevron-left-circle.svg"/>
           </button>
         </a>
         <!--back-button component-->
@@ -95,6 +96,16 @@
 
         </tbody>
       </table>
+      <div id="pagination-buttons">
+        <button type="button" id="button-left"> <img src="./../../assets/chevron-left.svg" width="15"> </button>
+        <div class="container-button-pag">
+          <button type="button" class="button-pag">1</button>
+          <button type="button" class="button-pag">2</button>
+          <button type="button" class="button-pag">3</button>
+    
+        </div>
+        <button type="button" id="button-right">  <img src="./../../assets/chevron-left.svg" width="15"> </button>
+      </div>
     </section>
   </body>
 </html>
