@@ -68,6 +68,7 @@ function defineButtonsPagination(lengthData, lengthEntries) {
         <div></div>
         <div></div>
       </div>`
+      break;
     }
   }
 
@@ -118,6 +119,10 @@ async function init(){
         "state": "MG"
       }
     ]
+  customers = customers.concat(customers).concat(customers)
+  // for (let i = 0; i < 4; i++) {
+  //   customers = customers.concat(customers)
+  // }
   showListCustomers(customers)
   showTotalCustomers(customers.length)
   defineButtonsPagination(customers.length, 10)

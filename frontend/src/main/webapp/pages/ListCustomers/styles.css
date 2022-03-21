@@ -1,3 +1,12 @@
+
+body {
+  position: relative;
+  height: 100vh;
+  min-width: 600px; //nao responsivo
+  padding-bottom: 100px;
+}
+
+
 section {
   position: relative;
   width: 100%;
@@ -88,7 +97,7 @@ section * {
   background: white;
   width: 90vw;
   min-width: 500px;
-  border: none;
+
   overflow: hidden;
   box-shadow: 0px 3px 10px rgba(0, 10, 10, 0.5);
 

@@ -1,6 +1,7 @@
 footer {
     position: relative;
     width: 100%;
+    bottom: 0px;
     height: 100px;
     display: flex;
     justify-content: space-around;
