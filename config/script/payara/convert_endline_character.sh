@@ -1,1 +1,0 @@
-for i in *.sh; do sed -i -e 's/\r$//' $i; done;
