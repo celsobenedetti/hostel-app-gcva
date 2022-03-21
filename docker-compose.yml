@@ -1,17 +1,21 @@
 version: "3.8"
 services:
   hostel-app-database:
+    container_name: hostel-app-database
     image: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWD}
       - MYSQL_DATABASE=${MYSQL_DB}
     ports:
       - '${MYSQL_PORT}:3306'
+    networks:
+      - backend
     volumes:
-      - ./config/mysql-dump:/docker-entrypoint-initdb.d
+      - ./config/docker/mysql/scripts:/docker-entrypoint-initdb.d
       - mysql-data:/var/lib/mysql
  
   hostel-app-server:
+    container_name: hostel-app-server
     image: payara/server-full
     ports:
       - '${PAYARA_MANAGER_PORT}:4848'
@@ -24,8 +28,15 @@ services:
       - ${PAYARA_LOCAL_DIR}/vvvConfiguration:/opt/vdz/config
       - ${PAYARA_LOCAL_DIR}/autodeploy:${AUTODEPLOY_DIR}
       - ${PAYARA_LOCAL_DIR}/bin:/opt/payara41/bin/
+      - ${PAYARA_LOCAL_DIR}/lib:/opt/payara41/lib/
     working_dir: /opt/payara41/bin/
     environment:
       - PAYARA_DOMAIN=${PAYARA_DOMAIN}
+    depends_on:
+      - hostel-app-database
+    networks:
+      - backend
 volumes:
   mysql-data:
+networks:
+  backend:

@@ -4,18 +4,18 @@ include ./.env
 init: docker-compose.yml .env;
 	@-echo -e "\nIniciando configuração de container's...\n"; \
 	docker-compose up -d; \
-	echo -e "\nAdicionando scripts...\n"; \
-	cp ./config/script/payara/*.sh ${PAYARA_LOCAL_DIR}/bin/; \
+	echo -e "\nAdicionando scripts e libs...\n"; \
+	cp ./config/docker/payara/bin/*.sh ${PAYARA_LOCAL_DIR}/bin/; \
+	cp ./config/docker/payara/lib/* ${PAYARA_LOCAL_DIR}/lib/; \
 	sudo chmod -R 777 ${PAYARA_LOCAL_DIR}; \
 	echo -e "\nConvertendo caracteres de fim de linha...\n"; \
-	docker exec -it hostel-app-gcva_hostel-app-server_1 bash convert_endline_character.sh; \
+	docker exec -it hostel-app-server bash convert_endline_character.sh; \
 	echo -e "\nPronto!\n"; \
 
 #Configurar jdbc connector e connection pool
-payara_config:
-	docker exec -it hostel-app-gcva_hostel-app-server_1 bash mysql_connection.sh; \
-	echo "\nReiniciando servidor...\n"; \
-	docker container restart hostel-app-gcva_hostel-app-server_1; \
+set_connection_pool: ;
+	@echo -e "\nAdicionando JDBC connection pool...\n"; \
+	docker exec -it hostel-app-server bash mysql_connection.sh; \
 
 #Apenas para instanciar containers
 run: docker-compose.yml;
@@ -24,12 +24,12 @@ run: docker-compose.yml;
 #Build
 
 build_backend: ;
-	@echo -e "\nbuild 'backend' project maven...\n"; \
+	@echo -e "\nbuild 'backend' maven project...\n"; \
 	mvn --file ./backend/pom.xml clean package; \
 	echo -e "\nPronto!\n"; \
 
 build_frontend: ;
-	@echo -e "\nBuild 'frontend' project maven...\n"; \
+	@echo -e "\nBuild 'frontend' maven project...\n"; \
 	mvn --file ./frontend/pom.xml clean package; \
 	echo -e "\nPronto!\n"; \
 
@@ -39,17 +39,15 @@ build_frontend: ;
 deploy_frontend: build_frontend;
 	@echo -e "\nRealizando deploy 'frontend' em Payara Server Container\n"; \
 	cp ./frontend/target/frontend-1.0-SNAPSHOT.war ${PAYARA_LOCAL_DIR}/deployments/frontend.war; \
-	docker exec -it hostel-app-gcva_hostel-app-server_1 bash deploy_frontend_script.sh; \
-	echo -e "\nProcesso de deployment concluído com sucesso.\nAcesse a aplicação em http://localhost:8080/frontend"; \
-	echo -e "\nPronto!\n"; \
+	docker exec -it hostel-app-server bash deploy_frontend_script.sh; \
+	echo -e "\nSe nenhum erro ocorreu acima, seu processo de deployment concluído com sucesso.\nAcesse a aplicação em http://localhost:8080/frontend"; \
 
 #Realiza deploy apenas do backend
 deploy_backend: build_backend;
 	@echo -e "\nRealizando deploy 'backend' em Payara Server Container\n"; \
 	cp ./backend/target/backend-1.0-SNAPSHOT.war ${PAYARA_LOCAL_DIR}/deployments/backend.war; \
-	docker exec -it hostel-app-gcva_hostel-app-server_1 bash deploy_backend_script.sh; \
-	echo -e "\nProcesso de deployment concluído com sucesso.\nAcesse a aplicação em http://localhost:8080/backend"; \
-	echo -e "\nPronto!\n"; \
+	docker exec -it hostel-app-server bash deploy_backend_script.sh; \
+	echo -e "\nSe nenhum erro ocorreu acima, seu processo de deployment concluído com sucesso.\nAcesse a aplicação em http://localhost:8080/backend"; \
 
 #Realiza deploy de tudo
 deploy_all: deploy_frontend deploy_backend;
@@ -61,17 +59,15 @@ deploy_all: deploy_frontend deploy_backend;
 redeploy_frontend: build_frontend;
 	@echo -e "\nRealizando redeploy 'frontend' em Payara Server Container\n"; \
 	cp ./frontend/target/frontend-1.0-SNAPSHOT.war ${PAYARA_LOCAL_DIR}/deployments/frontend.war; \
-	docker exec -it hostel-app-gcva_hostel-app-server_1 bash redeploy_frontend_script.sh; \
-	echo -e "\nProcesso de redeployment concluído com sucesso.\nAcesse a aplicação em http://localhost:8080/frontend"; \
-	echo -e "\nPronto!\n"; \
+	docker exec -it hostel-app-server bash redeploy_frontend_script.sh; \
+	echo -e "\nSe nenhum erro ocorreu acima, seu processo de redeployment concluído com sucesso.\nAcesse a aplicação em http://localhost:8080/frontend"; \
 
 #Realiza redeploy apenas do backend
 redeploy_backend: build_backend;
 	@echo -e "\nRealizando redeploy 'backend' em Payara Server Container\n"; \
 	cp ./backend/target/backend-1.0-SNAPSHOT.war ${PAYARA_LOCAL_DIR}/deployments/backend.war; \
-	docker exec -it hostel-app-gcva_hostel-app-server_1 bash redeploy_backend_script.sh; \
-	echo -e "\nProcesso de redeployment concluído com sucesso.\nAcesse a aplicação em http://localhost:8080/backend"; \
-	echo -e "\nPronto!\n"; \
+	docker exec -it hostel-app-server bash redeploy_backend_script.sh; \
+	echo -e "\nSe nenhum erro ocorreu acima, seu processo de redeployment concluído com sucesso.\nAcesse a aplicação em http://localhost:8080/backend"; \
 
 #Realiza redeploy de tudo
 redeploy_all: redeploy_frontend redeploy_backend;
