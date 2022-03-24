@@ -1,13 +1,11 @@
-package entity;
+package com.hostel.app.Entity;
 
+import com.hostel.app.Enum.RoleEnum;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -19,5 +17,5 @@ public class User {
     private Long id;
     private String username;
     private String password;
-    private boolean manager;
+    private RoleEnum role;
 }

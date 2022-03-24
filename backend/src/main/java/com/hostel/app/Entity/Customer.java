@@ -1,4 +1,4 @@
-package entity;
+package com.hostel.app.Entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

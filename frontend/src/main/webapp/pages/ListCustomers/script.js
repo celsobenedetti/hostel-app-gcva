@@ -6,8 +6,8 @@ getElementTableFormat = data =>
     <td class="table-index">${data.id}</td>
 
     <td>${data.phone}</td>
-    <td>${data.first_name}</td>
-    <td>${data.last_name}</td>
+    <td>${data.firstName}</td>
+    <td>${data.lastName}</td>
     <td>${data.email}</td>
     <td>
     <div class="status-container">
@@ -43,20 +43,47 @@ const createButtonPag = (content) => {
   const button = document.createElement('button')
   button.setAttribute('class', 'button-pag'); //possivel erro
   button.innerHTML = content;
-  button.onclick = () => {};
+  button.onclick = () => handleSwapPage(content);
   return button
 }
-function defineButtonsPagination(lengthData, lengthEntries) {
+
+
+function blockButtonsPagination(direction, block) {
+  var left = document.querySelector('#button-left').style
+  var right = document.querySelector('#button-right').style
+
+  var style = {
+    opacity: block ? "0.8" : "1",
+    cursor:  block ? "no-drop" : "pointer"
+  }
+  switch (direction) {
+    case "left":
+      left.cursor = style.cursor
+      left.opacity = style.opacity
+
+      break;
+    case "right":
+
+      right.cursor = style.cursor
+      right.opacity = style.opacity
+
+      break;
+    case "all":
+      right.cursor = style.cursor
+      right.opacity = style.opacity
+      left.cursor = style.cursor
+      left.opacity = style.opacity
+      break;
+    default:
+
+  }
+}
+function defineButtonsPagination(nPages) {
   var containerPagination = document.querySelector('#pagination-buttons > .container-button-pag')
-  var nPages = Math.ceil(lengthData / lengthEntries)
   containerPagination.innerHTML = ''
   if (nPages <= 1) {
-    document.querySelectorAll('#pagination-buttons button').forEach(i => {
-      i.style.opacity = "0.8";
-      i.style.cursor = "no-drop";
-    }
-    )
-    return
+    blockButtonsPagination("all", true)
+    return;
   }
   for (let i = 1; i <= nPages; i++){
     if (i <= 5)
@@ -74,56 +101,56 @@ function defineButtonsPagination(lengthData, lengthEntries) {
 
 }
 
+class Page {
+  constructor() {
+    this.pageSize = 10
+    this.pageNumber = 1
+    this.totalPages = 0
+    this.link = "http://localhost:8080/backend/api/guests/page?"
+  }
+
+  requestPage = async () => {
+    var {data: page} = await axios.get(`${this.link}page=${this.pageNumber}&size=${this.pageSize}`)
+    return page
+  }
+
+  async showPage() {
+    var {result: customers, totalSize} = await this.requestPage()
+    this.totalPages = Math.ceil(totalSize / this.pageSize)
+    showListCustomers(customers)
+    showTotalCustomers(totalSize)
+    defineButtonsPagination(this.totalPages)
+
+  }
+
+  async setPage(pageNumber) {
+    this.pageSize = parseInt(document.getElementById("page-size").value)
+    this.pageNumber = pageNumber
+    await page.showPage()
+  }
+
+}
+
+const page = new Page()
+
+async function handleSwapPage(pageNumber) {
+  if (pageNumber <= 0 ) {
+    pageNumber = 0
+    blockButtonsPagination("left", true)
+    return;
+  }
+  if (pageNumber > page.totalPages)  {
+    pageNumber = page.totalPages
+    blockButtonsPagination("right", true)
+    return;
+  }
+  blockButtonsPagination("all", false)
+  await page.setPage(pageNumber)
+
+}
+
 async function init(){
-  // dados que vão vir de uma requisição
-  // var {data: customers} = await axios.get("http://localhost:3001/customers")
-  var customers = [
-      {
-        "id": 1,
-        "first_name": "André",
-        "last_name":  "Neves",
-        "email": "email@email",
-        "phone": "(99) 999999999",
-        "address": "R. Desconhecida, 00, Centro",
-        "country": "Brazil",
-        "state": "MG"
-      },
-      {
-        "id": 2,
-        "first_name": "Arthur",
-        "last_name":  "Klimas",
-        "email": "email@email",
-        "phone": "(99) 999999999",
-        "address": "R. Desconhecida, 00, Centro",
-        "country": "Brazil",
-        "state": "MG"
-      },
-      {
-        "id": 3,
-        "first_name": "Caio",
-        "last_name":  "Marcondes",
-        "email": "email@email",
-        "phone": "(99) 999999999",
-        "address": "R. Desconhecida, 00, Centro",
-        "country": "Brazil",
-        "state": "MG"
-      },
-      {
-        "id": 4,
-        "first_name": "Celso",
-        "last_name":  "Patiri",
-        "email": "email@email",
-        "phone": "(99) 999999999",
-        "address": "R. Desconhecida, 00, Centro",
-        "country": "Brazil",
-        "state": "MG"
-      }
-    ]
-  customers = customers.concat(customers).concat(customers)
-  // for (let i = 0; i < 4; i++) {
-  //   customers = customers.concat(customers)
-  // }
-  showListCustomers(customers)
-  showTotalCustomers(customers.length)
-  defineButtonsPagination(customers.length, 10)
+  page.setPage(1)
+
+  //await requestPageCustomers()
 }

@@ -47,7 +47,7 @@
       <div class="options">
         <div id="entries">
           Show
-          <select class="" name="">
+          <select id="page-size" onchange="handleSwapPage(page.pageNumber)">
             <option value="10">10</option>
             <option value="15">15</option>
             <option value="20">20</option>
@@ -98,14 +98,14 @@
         </tbody>
       </table>
       <div id="pagination-buttons">
-        <button type="button" id="button-left"> <img src="./../../assets/chevron-left.svg" width="15"> </button>
+        <button type="button" id="button-left" onclick="handleSwapPage(page.pageNumber - 1)"> <img src="./../../assets/chevron-left.svg" width="15"> </button>
         <div class="container-button-pag">
           <button type="button" class="button-pag">1</button>
           <button type="button" class="button-pag">2</button>
           <button type="button" class="button-pag">3</button>
 
         </div>
-        <button type="button" id="button-right">  <img src="./../../assets/chevron-left.svg" width="15"> </button>
+        <button type="button" id="button-right" onclick="handleSwapPage(page.pageNumber + 1)"> <img src="./../../assets/chevron-left.svg" width="15"> </button>
       </div>
     </section>
     <footer>
