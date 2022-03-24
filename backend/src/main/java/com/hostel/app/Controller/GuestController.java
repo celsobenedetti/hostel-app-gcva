@@ -2,8 +2,10 @@ package com.hostel.app.Controller;
 
 import com.hostel.app.Entity.Guest;
 import com.hostel.app.Repository.GuestRepository;
+import com.hostel.app.Repository.Page;
 
 import javax.inject.Inject;
+import javax.servlet.jsp.PageContext;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -12,6 +14,7 @@ import java.util.List;
 @Path("guests")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
+
 public class GuestController {
 
     // O conteúdo dessa classe serve mais como um guia do que deve ser feito
@@ -37,5 +40,12 @@ public class GuestController {
         //TODO: inserir novo Guest no banco de dados
         guestRepository.save(newGuest);
         return Response.status(200).build();
+    }
+
+    @GET
+    @Path(value = "page")
+    public Page<Guest> page(@QueryParam("page") int page, @QueryParam("size") int size) {
+        //guestRepository.setPageable(new GuestPage(page, size));
+        return guestRepository.getPage(page, size);
     }
 }
