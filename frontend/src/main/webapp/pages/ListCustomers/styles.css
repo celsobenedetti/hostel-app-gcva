@@ -1,11 +1,9 @@
-
 body {
   position: relative;
-  height: 100vh;
-  min-width: 600px; //nao responsivo
+  min-height: 100vh;
+  min-width: 600px;
   padding-bottom: 100px;
 }
-
 
 section {
   position: relative;
@@ -28,7 +26,6 @@ section * {
   align-items: center;
   color: white;
   font-family: 'Poppins', sans-serif;
-
 }
 
 #entries {
@@ -37,7 +34,6 @@ section * {
 }
 
 .options select{
-
   background: #0047FF;
   border: 1px solid  #0047FF;
   color: white;
@@ -63,7 +59,6 @@ section * {
 
 .options input:focus {
   border: 2px solid #0047FF;
-
 }
 
 #total-customers {
@@ -82,6 +77,7 @@ section * {
   font-weight: bold;
   color: #0047FF !important;
 }
+
 .more-button {
   background: #0047FF;
   border: none;
@@ -92,15 +88,13 @@ section * {
   border-radius: 20px;
 }
 
-
 #customers {
   background: white;
   width: 90vw;
   min-width: 500px;
-
+  min-height: 300px;
   overflow: hidden;
   box-shadow: 0px 3px 10px rgba(0, 10, 10, 0.5);
-
 }
 
 #customers thead tr{
