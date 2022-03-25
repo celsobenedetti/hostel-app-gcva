@@ -103,8 +103,8 @@ function defineButtonsPagination(nPages) {
 
 class Page {
   constructor() {
-    this.pageSize = 10
-    this.pageNumber = 1
+    this.pageSize = 0
+    this.pageNumber = 0
     this.totalPages = 0
     this.link = "http://localhost:8080/backend/api/guests/page?"
   }
@@ -131,8 +131,9 @@ class Page {
 
 }
 
-const page = new Page()
+const page = new Page() //Inicia a area de paginas
 
+//funcao que estará em todos os listeners html (onclick, onchange, ...) referentes a troca de página
 async function handleSwapPage(pageNumber) {
   if (pageNumber <= 0 ) {
     pageNumber = 0
@@ -150,7 +151,7 @@ async function handleSwapPage(pageNumber) {
 }
 
 async function init(){
-  page.setPage(1)
+  page.setPage(1) //Inicia a página 1
 
   //await requestPageCustomers()
 }
