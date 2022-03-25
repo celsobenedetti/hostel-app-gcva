@@ -22,7 +22,7 @@ Tenha instalado:
 * docker v20.10.0+
 * docker-compose v1.29.0+
 * gnu-make v4.2.0+
-* JDK v8+
+* JDK 8+
 * Apache Maven v3+
 
 ## 🚀 Getting started
