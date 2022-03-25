@@ -17,13 +17,13 @@
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 <!---Estes são apenas requisitos de exemplo. Adicionar, duplicar ou remover conforme necessário--->
-Tenha instalado:
-* WSL (Windows Subsystem for Linux) [for Windows only]
-* docker v20.10.0+
-* docker-compose v1.29.0+
-* gnu-make v4.2.0+
-* JDK 8+
-* Apache Maven v3+
+#### Tenha instalado:
+* WSL (Windows Subsystem for Linux) [for Windows only] :heavy_check_mark:
+* docker v20.10.0+ :heavy_check_mark:
+* docker-compose v1.29.0+ :heavy_check_mark:
+* gnu-make v4.2.0+ :heavy_check_mark:
+* JDK 8+ :heavy_check_mark:
+* Apache Maven v3+ :heavy_check_mark:
 
 ## 🚀 Getting started
 
