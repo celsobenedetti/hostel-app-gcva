@@ -1,0 +1,19 @@
+.load {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: none; /*default*/
+  border-radius: 50%;
+  border: 3px solid #0047FF;
+  border-top: 3px solid #0090FF;
+  animation: spin-load .5s  linear infinite;
+}
+
+@keyframes spin-load {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

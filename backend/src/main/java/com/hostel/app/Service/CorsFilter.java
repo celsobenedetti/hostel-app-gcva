@@ -1,4 +1,4 @@
-package com.hostel.app.Controller;
+package com.hostel.app.Service;
 
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerResponseContext;
