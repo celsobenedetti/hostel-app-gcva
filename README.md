@@ -45,7 +45,7 @@ make set_connection_pool
 ```
 make deploy_all
 ```
-
+5. Depois do deploy, tende ver o resultado em: http://localhost:8080/frontend
 > #### Observações: 
 > 1. A primeira vez tende a ser demorada, pois é necessário download de diversar dependências
 > 2. Se estiver em uma distro linux, e houver erro de permissão, tente adicionar `sudo` aos comandos `make`, exemplo:
