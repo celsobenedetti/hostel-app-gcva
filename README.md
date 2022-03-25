@@ -2,13 +2,16 @@
 
 <!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, status do projeto e informações de licença aqui--->
 
-![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/iuricode/README-template?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/celso-patiri/hostel-app-gcva?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/celso-patiri/hostel-app-gcva?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/celso-patiri/hostel-app-gcva?style=for-the-badge)
+![GitHub open issues](https://img.shields.io/github/issues/celso-patiri/hostel-app-gcva?style=for-the-badge)
 
-<img src="https://s.tmimgcdn.com/scr/1200x750/57600/hostel-modelo-de-site-html5-de-varias-paginas-de-viagens_57677-2-original.jpg" alt="exemplo imagem">
+<img src="https://user-images.githubusercontent.com/81968354/160112820-8dc6204a-d242-405c-818d-c2c294e7051c.png" alt="exemplo imagem">
+
+
+
+
 
 > Web Application em desenvolvimento para gerenciamente de clientes por parte dos funcionário do Host Sparkling Water
 
