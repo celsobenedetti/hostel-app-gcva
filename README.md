@@ -17,7 +17,7 @@
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 <!---Estes são apenas requisitos de exemplo. Adicionar, duplicar ou remover conforme necessário--->
-#### Tenha instalado:
+#### Tenha instalado (ordem importante):
 * WSL (Windows Subsystem for Linux) [for Windows only] :heavy_check_mark:
 * docker v20.10.0+ :heavy_check_mark:
 * docker-compose v1.29.0+ :heavy_check_mark:
