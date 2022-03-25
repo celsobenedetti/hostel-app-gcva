@@ -17,10 +17,13 @@
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 <!---Estes são apenas requisitos de exemplo. Adicionar, duplicar ou remover conforme necessário--->
-
-* Você instalou a versão mais recente de docker ([download](https://docs.docker.com/get-docker/)) e docker-compose ([download]( https://docs.docker.com/compose/install/))
-* Você possui uma IDE adequada para Web Applications do Jakarte EE 8 
-* Você possui o git instalado ([download](https://git-scm.com/downloads))
+Tenha instalado:
+* WSL (Windows Subsystem for Linux) [for Windows only]
+* docker v20.10.0+
+* docker-compose v1.29.0+
+* gnu-make v4.2.0+
+* JDK v8+
+* Apache Maven v3+
 
 ## 🚀 Getting started
 
@@ -34,9 +37,18 @@ git clone https://github.com/celso-patiri/hostel-app-gcva.git
 ```
 make init
 ```
+3. Inicie um connection pool (necessário para que o backend funcione)
+```
+make set_connection_pool
+```
+4. Faça o deploy de tudo no Payara Server Docker
+```
+make deploy_all
+```
+
 > Observações: 
 > 1. A primeira vez tende a ser demorada, pois é necessário download de diversar dependências
-> 2. Se estiver em uma distro linux, e houver erro de permissão, tente adicionar sudo aos comandos make, exemplo:
+> 2. Se estiver em uma distro linux, e houver erro de permissão, tente adicionar `sudo` aos comandos `make`, exemplo:
 > 
 > Ao invés de:
 > 
