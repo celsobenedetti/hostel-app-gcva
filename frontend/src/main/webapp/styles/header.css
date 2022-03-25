@@ -29,6 +29,16 @@ header #top .title {
   color: white;
 }
 
+.header-right-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header-right-buttons *{
+  margin-left: 4px;
+}
+
 #hostel-mark {
   position: relative;
   width: 100%;

@@ -12,7 +12,7 @@ import java.util.List;
 @Getter
 @Setter
 @ApplicationScoped
-public class GuestRepository implements Pageable{
+public class GuestRepository{
     @PersistenceContext
     private EntityManager em;
 
@@ -29,19 +29,26 @@ public class GuestRepository implements Pageable{
         em.persist(guest);
     }
 
-    //Método fictício de paginação
-    // Por que isso não é eficiente?
-    // Reposta: Perceba que o método abaixo recorre ao banco de dados
-    // duas vezes, uma para obter a listada delimitada de acordo com a
-    // pagina, e outra para obter o tamanho total de usuários, o correto
-    // seria resover isso tudo em apenas uma consulta, por isso o metodo
-    // abaixo não é eficiente
-    public Page<Guest> getPage(int pageNumber, int pageSize){
-        //return "page=" + this.pageNumber + "; size=" + this.pageSize;
-        List<Guest> result = em.createNativeQuery("SELECT * FROM GUEST LIMIT " + pageSize * (pageNumber - 1) + "," + pageSize, Guest.class).getResultList();
-        int totalSize = this.findAll().size();
-        //return em.createQuery("SELECT g FROM Guest g", Guest.class).getResultList();
-        return new Page<Guest>(result, totalSize);
+
+    public List<Guest> findAllWithLimit(int baseNumber, int numberElements){
+        List<Guest> result = em.createNativeQuery("SELECT * FROM GUEST LIMIT " + baseNumber + "," + numberElements, Guest.class).getResultList();
+        return result;
+    }
+
+    public List<Guest> findByFirstnameOrLastNameWithLimit(String searchString, int baseNumber, int numberElements) {
+        searchString = '%' + searchString + '%';//searchString
+        List result = em.createNativeQuery("SELECT * FROM GUEST WHERE FIRST_NAME LIKE ?1 OR LAST_NAME LIKE ?1 LIMIT " + baseNumber + "," + numberElements, Guest.class)
+                .setParameter(1, searchString)
+                .getResultList();
+        return result;
+    }
+
+    public List<Guest> findByFirstnameOrLastName(String searchString) {
+        searchString = '%' + searchString + '%';//searchString
+        List result = em.createNativeQuery("SELECT * FROM GUEST WHERE FIRST_NAME LIKE ?1 OR LAST_NAME LIKE ?1", Guest.class)
+                .setParameter(1, searchString)
+                .getResultList();
+        return result;
     }
 
 }

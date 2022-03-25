@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../styles/back-button.css">
     <link rel="stylesheet" href="../../styles/pagination-buttons.css">
     <link rel="stylesheet" href="../../styles/status-button.css">
+    <link rel="stylesheet" href="../../styles/load.css">
     <link rel="stylesheet" href="./styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="https://unpkg.com/axios@0.26.1/dist/axios.min.js"></script>
@@ -28,7 +29,7 @@
         <div class="title">
           Customers
         </div>
-        <div class="">
+        <div class="header-right-buttons">
           <a href="../RegisterCustomer/index.html">
             <button type="button" name="more" class="more-button">
               <img src="./../../assets/more.svg">
@@ -57,7 +58,8 @@
           customers
         </div>
         <div id="search">
-          <input type="text" name="" value="" placeholder="Search">
+          <input type="text" id="page-search" value="" placeholder="Search">
+          <button onclick="handleSwapPage(page.pageNumber)"><img src="./../../assets/search.svg" width="10" alt=""></button>
         </div>
 
         <div id="total-customers">
@@ -65,6 +67,7 @@
         </div>
       </div>
       <table id="customers" cellspacing="0" cellpadding="0">
+
         <thead>
           <tr>
             <th>#</th>
@@ -76,7 +79,9 @@
 
           </tr>
         </thead>
+
         <tbody>
+
                     <!-- <tr>
                       <td class="table-index">id</td>
                       <td>first_name</td>
@@ -97,16 +102,16 @@
 
         </tbody>
       </table>
+
       <div id="pagination-buttons">
         <button type="button" id="button-left" onclick="handleSwapPage(page.pageNumber - 1)"> <img src="./../../assets/chevron-left.svg" width="15"> </button>
         <div class="container-button-pag">
-          <button type="button" class="button-pag">1</button>
-          <button type="button" class="button-pag">2</button>
-          <button type="button" class="button-pag">3</button>
 
         </div>
+        <div id="page-load" class="load"></div>
         <button type="button" id="button-right" onclick="handleSwapPage(page.pageNumber + 1)"> <img src="./../../assets/chevron-left.svg" width="15"> </button>
       </div>
+
     </section>
     <footer>
       <p>&copy Team 2 - Trabalho GCVA</p>

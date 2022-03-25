@@ -1,4 +1,4 @@
-package com.hostel.app.Repository;
+package com.hostel.app.Service;
 
 import lombok.Getter;
 import lombok.Setter;

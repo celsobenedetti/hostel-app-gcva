@@ -2,10 +2,10 @@ package com.hostel.app.Controller;
 
 import com.hostel.app.Entity.Guest;
 import com.hostel.app.Repository.GuestRepository;
-import com.hostel.app.Repository.Page;
+import com.hostel.app.Service.Page;
+import com.hostel.app.Service.Pageable;
 
 import javax.inject.Inject;
-import javax.servlet.jsp.PageContext;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -23,6 +23,7 @@ public class GuestController {
     private GuestRepository guestRepository;
 
     @GET
+    @Path("all")
     public List<Guest> getGuests(){
         return guestRepository.findAll();
     }
@@ -43,9 +44,17 @@ public class GuestController {
     }
 
     @GET
-    @Path(value = "page")
     public Page<Guest> page(@QueryParam("page") int page, @QueryParam("size") int size) {
-        //guestRepository.setPageable(new GuestPage(page, size));
-        return guestRepository.getPage(page, size);
+        List<Guest> result = guestRepository.findAllWithLimit(size * (page - 1) , size);
+        int totalSize = guestRepository.findAll().size();
+        return new Page<Guest>(result, totalSize);
+    }
+
+    @GET
+    @Path("search")
+    public Page<Guest> search(@QueryParam("q") String q, @QueryParam("page") int page, @QueryParam("size") int size) {
+        List<Guest> result = guestRepository.findByFirstnameOrLastNameWithLimit(q, size * (page - 1) , size);
+        int totalSize = guestRepository.findByFirstnameOrLastName(q).size();
+        return new Page<Guest>(result, totalSize);
     }
 }

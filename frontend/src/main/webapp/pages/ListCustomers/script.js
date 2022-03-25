@@ -1,3 +1,5 @@
+//Formata as linhas que serão exebidas na tabela, retornando o HTML dessas linhas
+const request = axios.create({"baseURL": "http://localhost:8080/backend/api/guests"})
 
 getElementTableFormat = data =>
    (
@@ -24,7 +26,7 @@ getElementTableFormat = data =>
 )
 
 
-
+//Insere cada linha na tabela, cada elemento do array data vira uma linha
 function showListCustomers(data) {
   var table = document.querySelector('#customers > tbody')
   table.innerHTML = '';
@@ -34,20 +36,22 @@ function showListCustomers(data) {
 
 }
 
+//Exibi o numero total de hospedes que existe no banco de dados
 function showTotalCustomers(n) {
   var totalCustomers = document.querySelector('#total-customers-value')
   totalCustomers.innerText = n
 }
 
+//Cria um botão numerico que indica uma pagina a ser selecionada (apenas cria, mas não é renderizado na pagina)
 const createButtonPag = (content) => {
-  const button = document.createElement('button')
-  button.setAttribute('class', 'button-pag'); //possivel erro
+  const button = document.createElement('button');
+  button.setAttribute('class', 'button-pag');
   button.innerHTML = content;
   button.onclick = () => handleSwapPage(content);
   return button
 }
 
-
+//bloqueia e desbloqueia os buttons de paginação left e right
 function blockButtonsPagination(direction, block) {
   var left = document.querySelector('#button-left').style
   var right = document.querySelector('#button-right').style
@@ -78,6 +82,8 @@ function blockButtonsPagination(direction, block) {
 
   }
 }
+
+//Renderiza os buttons na pagina e trata particularidades
 function defineButtonsPagination(nPages) {
   var containerPagination = document.querySelector('#pagination-buttons > .container-button-pag')
   containerPagination.innerHTML = ''
@@ -101,16 +107,29 @@ function defineButtonsPagination(nPages) {
 
 }
 
+//Controla a exibição do page-onload
+function controlPageLoad(control) {
+  var load = document.getElementById('page-load').style
+  load.display = !control ? "none" : "block";
+}
+
+//Classe que representa uma pagina
 class Page {
   constructor() {
     this.pageSize = 0
+    this.searchString = undefined
     this.pageNumber = 0
     this.totalPages = 0
-    this.link = "http://localhost:8080/backend/api/guests/page?"
   }
 
   requestPage = async () => {
-    var {data: page} = await axios.get(`${this.link}page=${this.pageNumber}&size=${this.pageSize}`)
+    var stringRequest =
+    this.searchString ?
+    `search?q=${this.searchString}&page=${this.pageNumber}&size=${this.pageSize}`
+    :
+    `?page=${this.pageNumber}&size=${this.pageSize}`
+    console.log(stringRequest)
+    var {data: page} = await request.get(stringRequest)
     return page
   }
 
@@ -125,8 +144,11 @@ class Page {
 
   async setPage(pageNumber) {
     this.pageSize = parseInt(document.getElementById("page-size").value)
+    this.searchString = document.getElementById("page-search").value
     this.pageNumber = pageNumber
+    controlPageLoad(true)
     await page.showPage()
+    controlPageLoad(false)
   }
 
 }
@@ -135,14 +157,17 @@ const page = new Page() //Inicia a area de paginas
 
 //funcao que estará em todos os listeners html (onclick, onchange, ...) referentes a troca de página
 async function handleSwapPage(pageNumber) {
-  if (pageNumber <= 0 ) {
+  if (pageNumber < 0 ) {
     pageNumber = 0
     blockButtonsPagination("left", true)
+    alert('o1')
     return;
   }
-  if (pageNumber > page.totalPages)  {
+  if (page.totalPages && pageNumber > page.totalPages) //Se o numero total de paginas não for zero e pageNumber maior que o total de paginas, bloqueie
+  {
     pageNumber = page.totalPages
     blockButtonsPagination("right", true)
+    alert('o2')
     return;
   }
   blockButtonsPagination("all", false)
@@ -152,6 +177,4 @@ async function handleSwapPage(pageNumber) {
 
 async function init(){
   page.setPage(1) //Inicia a página 1
-
-  //await requestPageCustomers()
 }
