@@ -29,10 +29,16 @@ getElementTableFormat = data =>
 //Insere cada linha na tabela, cada elemento do array data vira uma linha
 function showListCustomers(data) {
   var table = document.querySelector('#customers > tbody')
+  var noResults = document.querySelector('#no-result')
   table.innerHTML = '';
-  data.forEach((item, i) => {
-    table.innerHTML += getElementTableFormat(item)
-  });
+  if (!data.length) {
+    noResults.style.display = "flex";
+  } else {
+    noResults.style.display = "none";
+    data.forEach((item, i) => {
+      table.innerHTML += getElementTableFormat(item)
+    });
+  }
 
 }
 
@@ -57,26 +63,21 @@ function blockButtonsPagination(direction, block) {
   var right = document.querySelector('#button-right').style
 
   var style = {
-    opacity: block ? "0.8" : "1",
-    cursor:  block ? "no-drop" : "pointer"
-  }
+      backgroundColor: block ? "#CACACA" : "#0047FF",
+      cursor:  block ? "no-drop" : "pointer"
+    }
+
+
   switch (direction) {
     case "left":
-      left.cursor = style.cursor
-      left.opacity = style.opacity
-
+      Object.assign(left, style)
       break;
     case "right":
-
-      right.cursor = style.cursor
-      right.opacity = style.opacity
-
+      Object.assign(right, style)
       break;
     case "all":
-      right.cursor = style.cursor
-      right.opacity = style.opacity
-      left.cursor = style.cursor
-      left.opacity = style.opacity
+      Object.assign(left, style)
+      Object.assign(right, style)
       break;
     default:
 
@@ -157,17 +158,15 @@ const page = new Page() //Inicia a area de paginas
 
 //funcao que estará em todos os listeners html (onclick, onchange, ...) referentes a troca de página
 async function handleSwapPage(pageNumber) {
-  if (pageNumber < 0 ) {
+  if (pageNumber <= 0 ) {
     pageNumber = 0
     blockButtonsPagination("left", true)
-    alert('o1')
     return;
   }
   if (page.totalPages && pageNumber > page.totalPages) //Se o numero total de paginas não for zero e pageNumber maior que o total de paginas, bloqueie
   {
     pageNumber = page.totalPages
     blockButtonsPagination("right", true)
-    alert('o2')
     return;
   }
   blockButtonsPagination("all", false)
