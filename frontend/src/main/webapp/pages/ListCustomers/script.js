@@ -1,8 +1,9 @@
 //Formata as linhas que serão exebidas na tabela, retornando o HTML dessas linhas
 const request = axios.create({"baseURL": "http://localhost:8080/backend/api/guests"})
 
-getElementTableFormat = data =>
-   (
+getElementTableFormat = data => {
+    console.log(data.status)
+   return (
     `
     <tr>
     <td class="table-index">${data.id}</td>
@@ -13,7 +14,7 @@ getElementTableFormat = data =>
     <td>${data.email}</td>
     <td>
     <div class="status-container">
-        <input type="checkbox" id="status" value="" check="${data.status || false}"/>
+        <input type="checkbox" class="status" id=${data.id} onclick="handleUpdateStatus(${data.id}, this.checked)" ${data.status && 'checked'} />
         <div class="status-fake-button">
           <div class="status-fake-button-mark">
 
@@ -23,7 +24,7 @@ getElementTableFormat = data =>
     </td>
   </tr>
   `
-)
+)}
 
 
 //Insere cada linha na tabela, cada elemento do array data vira uma linha
@@ -115,6 +116,12 @@ function defineButtonsPagination(nPages, pageSelect) {
 function controlPageLoad(control) {
   var load = document.getElementById('page-load').style
   load.display = !control ? "none" : "block";
+}
+
+async function handleUpdateStatus(id, status){
+  controlPageLoad(true)
+  await request.get(`updateStatus?id=${id}&status=${status}`)
+  controlPageLoad(false)
 }
 
 //Classe que representa uma pagina
