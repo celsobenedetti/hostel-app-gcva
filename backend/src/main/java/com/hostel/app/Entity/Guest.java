@@ -14,7 +14,7 @@ import java.io.Serializable;
 @Table(name = "GUEST")
 public class Guest implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "GUEST_ID")
     private Long id;
     @Column(name = "FIRST_NAME")

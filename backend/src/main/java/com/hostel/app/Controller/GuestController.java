@@ -32,14 +32,24 @@ public class GuestController {
     @Path("{id}")
 
     public Guest getGuestById(@PathParam("id") long id) {
-        //TODO: pegar Guest no banco de dados atraves do id
         return guestRepository.findById(id);
     }
 
     @POST
     public Response createNewGuest(Guest newGuest){
-        //TODO: inserir novo Guest no banco de dados
-        guestRepository.save(newGuest);
+        try {
+            guestRepository.save(newGuest);
+            return Response.status(200, "Inserido!").build();
+        } catch (Exception e) {
+            return Response.status(400, e.getMessage()).build();
+        }
+    }
+
+
+    @DELETE
+    @Path("{id}")
+    public Response delete(@PathParam("id") long id) {
+        guestRepository.remove(id);
         return Response.status(200).build();
     }
 
