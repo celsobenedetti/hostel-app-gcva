@@ -7,11 +7,7 @@
 ![GitHub forks](https://img.shields.io/github/forks/celso-patiri/hostel-app-gcva?style=for-the-badge)
 ![GitHub open issues](https://img.shields.io/github/issues/celso-patiri/hostel-app-gcva?style=for-the-badge)
 
-<img src="https://user-images.githubusercontent.com/81968354/160112820-8dc6204a-d242-405c-818d-c2c294e7051c.png" alt="exemplo imagem">
-
-
-
-
+<img src="https://user-images.githubusercontent.com/81968354/160247797-bdb88ab1-5842-4532-a09b-f4715cf84b40.png" alt="exemplo imagem">
 
 > Web Application em desenvolvimento para gerenciamente de clientes por parte dos funcionário do Host Sparkling Water
 
