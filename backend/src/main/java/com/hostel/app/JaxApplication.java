@@ -1,4 +1,4 @@
-package com.hostel.app.Controller;
+package com.hostel.app;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
