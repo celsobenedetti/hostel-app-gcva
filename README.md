@@ -9,7 +9,7 @@
 
 <img src="https://user-images.githubusercontent.com/81968354/160247797-bdb88ab1-5842-4532-a09b-f4715cf84b40.png" alt="exemplo imagem">
 
-> Web Application em desenvolvimento para gerenciamente de clientes por parte dos funcionário do Host Sparkling Water
+> Web Application em desenvolvimento para gerenciamento de clientes por parte do Hostel Sparkling Water
 
 
 ## 💻 Pré-requisitos
