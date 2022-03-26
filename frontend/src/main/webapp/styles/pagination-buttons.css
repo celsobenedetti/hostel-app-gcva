@@ -21,6 +21,12 @@
 
 }
 
+#pagination-buttons #selected-page {
+  transform: scale(1.1);
+  font-weight: bold;
+
+}
+
 #pagination-buttons button:hover {
   font-weight: bold;
 

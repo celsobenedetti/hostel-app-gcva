@@ -85,7 +85,7 @@ function blockButtonsPagination(direction, block) {
 }
 
 //Renderiza os buttons na pagina e trata particularidades
-function defineButtonsPagination(nPages) {
+function defineButtonsPagination(nPages, pageSelect) {
   var containerPagination = document.querySelector('#pagination-buttons > .container-button-pag')
   containerPagination.innerHTML = ''
   if (nPages <= 1) {
@@ -93,8 +93,11 @@ function defineButtonsPagination(nPages) {
     return;
   }
   for (let i = 1; i <= nPages; i++){
-    if (i <= 5)
-      containerPagination.appendChild(createButtonPag(i))
+    if (i <= 5){
+      let button = createButtonPag(i)
+      if (i == pageSelect) button.setAttribute('id', 'selected-page')
+      containerPagination.appendChild(button)
+    }
     else {
       containerPagination.innerHTML += `
       <div class="pag-more">
@@ -139,7 +142,7 @@ class Page {
     this.totalPages = Math.ceil(totalSize / this.pageSize)
     showListCustomers(customers)
     showTotalCustomers(totalSize)
-    defineButtonsPagination(this.totalPages)
+    defineButtonsPagination(this.totalPages, this.pageNumber)
 
   }
 
