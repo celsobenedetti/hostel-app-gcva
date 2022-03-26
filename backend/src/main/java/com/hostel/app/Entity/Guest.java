@@ -31,8 +31,10 @@ public class Guest implements Serializable {
     private String country;
     @Column(name = "STATE")
     private String state;
+    @Column(name = "STATUS")
+    private boolean status = true;
 
-    public Guest(String firstName, String lastName, String EMAIL_ADDRESS, String PHONE_NUMBER, String ADDRESS, String COUNTRY, String STATE) {
+    public Guest(String firstName, String lastName, String EMAIL_ADDRESS, String PHONE_NUMBER, String ADDRESS, String COUNTRY, String STATE, boolean status) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = EMAIL_ADDRESS;
@@ -40,5 +42,6 @@ public class Guest implements Serializable {
         this.address = ADDRESS;
         this.country = COUNTRY;
         this.state = STATE;
+        this.status = status;
     }
 }

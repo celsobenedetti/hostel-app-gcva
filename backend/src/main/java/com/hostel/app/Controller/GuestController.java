@@ -67,4 +67,10 @@ public class GuestController {
         int totalSize = guestRepository.findByFirstnameOrLastName(q).size();
         return new Page<Guest>(result, totalSize);
     }
+
+    @GET
+    @Path("updateStatus")
+    public void updateStatus(@QueryParam("id") Long id, @QueryParam("status") boolean status) {
+        guestRepository.updateStatus(id, status);
+    }
 }
