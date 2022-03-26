@@ -9,14 +9,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import java.util.List;
+
 @Getter
 @Setter
 @ApplicationScoped
-public class GuestRepository{
+public class GuestRepository implements Repository<Guest> {
     @PersistenceContext
     private EntityManager em;
 
-    public Guest findById(Long id){
+
+    public Guest findById(Long id) {
         return em.find(Guest.class, id);
     }
 
@@ -25,12 +27,18 @@ public class GuestRepository{
     }
 
     @Transactional
-    public void save(Guest guest){
+    public void save(Guest guest) {
         em.persist(guest);
     }
 
+    @Transactional
+    public void remove(Long id) {
+        Guest guest = this.findById(id);
+        em.remove(guest);
+    }
 
-    public List<Guest> findAllWithLimit(int baseNumber, int numberElements){
+
+    public List<Guest> findAllWithLimit(int baseNumber, int numberElements) {
         List<Guest> result = em.createNativeQuery("SELECT * FROM GUEST LIMIT " + baseNumber + "," + numberElements, Guest.class).getResultList();
         return result;
     }
