@@ -1,20 +1,28 @@
 //Formata as linhas que serão exebidas na tabela, retornando o HTML dessas linhas
 const request = axios.create({"baseURL": "http://localhost:8080/backend/api/guests"})
 
-getElementTableFormat = data => {
-    console.log(data.status)
-   return (
+//Adiciona a opcao de exibir todos os dados da tabela de uma vez, sem paginação
+function addShowAllOptionInSelect(totalSize){
+  var selectShowCustomers = document.getElementById("page-size")
+  var optionAll = document.createElement("option");
+  optionAll.setAttribute("value", totalSize);
+  optionAll.innerHTML = "all";
+  selectShowCustomers.appendChild(optionAll)
+}
+
+
+getElementTableFormat = element => (
     `
     <tr>
-    <td class="table-index">${data.id}</td>
+    <td class="table-index">${element.id}</td>
 
-    <td>${data.phone}</td>
-    <td>${data.firstName}</td>
-    <td>${data.lastName}</td>
-    <td>${data.email}</td>
+    <td>${element.phone}</td>
+    <td>${element.firstName}</td>
+    <td>${element.lastName}</td>
+    <td>${element.email}</td>
     <td>
     <div class="status-container">
-        <input type="checkbox" class="status" id=${data.id} onclick="handleUpdateStatus(${data.id}, this.checked)" ${data.status && 'checked'} />
+        <input type="checkbox" class="status" id=${element.id} onclick="handleUpdateStatus(${element.id}, this.checked)" ${element.status && 'checked'} />
         <div class="status-fake-button">
           <div class="status-fake-button-mark">
 
@@ -24,7 +32,7 @@ getElementTableFormat = data => {
     </td>
   </tr>
   `
-)}
+)
 
 
 //Insere cada linha na tabela, cada elemento do array data vira uma linha
@@ -153,7 +161,7 @@ class Page {
 
   }
 
-  async setPage(pageNumber) {
+  async constructPage(pageNumber) {
     this.pageSize = parseInt(document.getElementById("page-size").value)
     this.searchString = document.getElementById("page-search").value
     this.pageNumber = pageNumber
@@ -180,10 +188,16 @@ async function handleSwapPage(pageNumber) {
     return;
   }
   blockButtonsPagination("all", false)
-  await page.setPage(pageNumber)
+  await page.constructPage(pageNumber)
 
 }
 
 async function init(){
-  page.setPage(1) //Inicia a página 1
+  await page.constructPage(1) //Inicia a página 1
+
+  // Como addShowAllOptionInSelect precisa de atributos
+  // que pertencem ao objeto page, existe a necessidade
+  // de função assíncrona para garantirmos que só cheguemos
+  // até aqui após page estar totalmente definido
+  addShowAllOptionInSelect(page.pageSize * page.totalPages)
 }
