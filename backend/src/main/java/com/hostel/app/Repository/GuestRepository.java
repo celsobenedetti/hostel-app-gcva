@@ -59,4 +59,10 @@ public class GuestRepository implements Repository<Guest> {
         return result;
     }
 
+    @Transactional
+    public void updateStatus(Long id, boolean status){
+        Guest guest = this.findById(id);
+        guest.setStatus(status);
+    }
+
 }
