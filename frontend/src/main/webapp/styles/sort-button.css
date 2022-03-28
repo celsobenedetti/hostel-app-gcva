@@ -1,0 +1,16 @@
+.sort-button {
+  position: relative;
+  background: none;
+  border: none;
+  width: 20px;
+}
+.sort-button div {
+  opacity: 1;
+  width: 10px;
+  height: 8px;
+  transition: opacity .2s linear;
+}
+
+.sort-button div:last-child{
+  transform: rotate(180deg);
+}
