@@ -51,10 +51,11 @@ section * {
 }
 
 #search input {
+  position: relative;
   background: none;
   border: none;
   height: 30px;
-  width: calc(100% - 30px);
+  width: calc(100% - 60px);
   color: white;
   font-family: 'Roboto', sans-serif;
   text-align: center;
@@ -63,6 +64,20 @@ section * {
 }
 
 #search button {
+  position: relative;
+  background: #0047FF;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: auto;
+  margin-right: 2px;
+}
+
+#search button:first-child {
   background: #0047FF;
   width: 24px;
   height: 24px;

@@ -274,6 +274,11 @@ function addFilterButtonsInHeader(){
   for (let i = 0; i < headers.length; i++) {
     table[i].querySelector(".contentHeader").appendChild(createButtonFilter("sort-button-customers" + i, headers[i]))
   }
+}
+
+function cleanSearch() {
+  document.getElementById("page-search").value = ''
+  handleSwapPage(1);
 
 }
 
