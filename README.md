@@ -7,7 +7,7 @@
 ![GitHub forks](https://img.shields.io/github/forks/celso-patiri/hostel-app-gcva?style=for-the-badge)
 ![GitHub open issues](https://img.shields.io/github/issues/celso-patiri/hostel-app-gcva?style=for-the-badge)
 
-<img src="https://user-images.githubusercontent.com/81968354/160247797-bdb88ab1-5842-4532-a09b-f4715cf84b40.png" alt="exemplo imagem">
+<img src="https://user-images.githubusercontent.com/81968354/160881482-e982c640-5ac3-4651-8907-7c6313ef6084.png" alt="exemplo imagem">
 
 > Web Application em desenvolvimento para gerenciamento de clientes por parte do Hostel Sparkling Water
 
