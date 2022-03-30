@@ -139,6 +139,7 @@ class Page {
     this.searchString = undefined
     this.pageNumber = 0
     this.totalPages = 0
+    this.elements = {}
   }
 
   requestPage = async () => {
@@ -149,6 +150,7 @@ class Page {
     `?page=${this.pageNumber}&size=${this.pageSize}`
     console.log(stringRequest)
     var {data: page} = await request.get(stringRequest)
+    this.elements = page.result
     return page
   }
 
@@ -192,6 +194,89 @@ async function handleSwapPage(pageNumber) {
 
 }
 
+// sort table
+
+function getContentButton(ord) {
+  var contentDiv = `<img width="10" src="./../../assets/chevron-up.svg">`
+  var contentButton = {
+    "asc": `
+      <div style="opacity: 1;"> ${contentDiv} </div>
+      <div style="opacity: 0;"> ${contentDiv} </div>
+    `,
+    "desc": `
+      <div style="opacity: 0;""> ${contentDiv} </div>
+      <div style="opacity: 1;""> ${contentDiv}</div>
+    `,
+    "none": `
+      <div style="opacity: 1;"> ${contentDiv} </div>
+      <div style="opacity: 1;"> ${contentDiv} </div>
+    `
+  }
+  return contentButton[ord];
+}
+
+function sortTableByColumn(button, field, ord) {
+
+
+  if (!Object.keys(page.elements[0]).includes(field)) {
+    console.log("O campo a ser filtrado não existe");
+    return;
+  }
+
+  var elements = [
+    ...page.elements
+  ]
+
+  function compareFields(a, b, field) {
+  if (a[field] > b[field]) {
+    return 1;
+  }
+  if (a[field] < b[field]) {
+    return -1;
+  }
+  // a must be equal to b
+  return 0;
+  }
+
+  switch (ord) {
+    case "none":
+      button.onclick = () => sortTableByColumn(button, field, "asc")
+      showListCustomers(page.elements)
+      break;
+    case "asc":
+      button.onclick = () => sortTableByColumn(button, field, "desc")
+      showListCustomers(elements.sort((a, b) => compareFields(a, b, field)))
+      break;
+    case "desc":
+      button.onclick = () => sortTableByColumn(button, field, "none")
+      showListCustomers(elements.sort((a, b) => compareFields(b, a, field)))
+      break;
+    default:
+  }
+
+  button.innerHTML = getContentButton(ord)
+}
+
+
+function createButtonFilter(id, field) {
+  const button = document.createElement('button');
+  button.setAttribute('class', 'sort-button');
+
+
+  button.innerHTML =   button.innerHTML = getContentButton("none");
+  button.onclick = () => sortTableByColumn(button, field, "asc");
+  return button
+}
+
+function addFilterButtonsInHeader(){
+  var headers = ["id", "phone", "firstName", "lastName", "email"]
+  var table = document.querySelectorAll("#customers > thead > tr > th")
+  for (let i = 0; i < headers.length; i++) {
+    table[i].querySelector(".contentHeader").appendChild(createButtonFilter("sort-button-customers" + i, headers[i]))
+  }
+
+}
+
 async function init(){
   await page.constructPage(1) //Inicia a página 1
 
@@ -200,4 +285,5 @@ async function init(){
   // de função assíncrona para garantirmos que só cheguemos
   // até aqui após page estar totalmente definido
   addShowAllOptionInSelect(page.pageSize * page.totalPages)
+  addFilterButtonsInHeader();
 }
