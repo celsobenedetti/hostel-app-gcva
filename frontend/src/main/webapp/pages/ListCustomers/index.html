@@ -1,92 +1,119 @@
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Lista de Hospedes</title>
-    <link rel="stylesheet" href="../../styles/global.css">
-    <link rel="stylesheet" href="../../styles/header.css">
-    <link rel="stylesheet" href="../../styles/footer.css">
-    <link rel="stylesheet" href="../../styles/back-button.css">
-    <link rel="stylesheet" href="../../styles/pagination-buttons.css">
-    <link rel="stylesheet" href="../../styles/status-button.css">
-    <link rel="stylesheet" href="../../styles/load.css">
-    <link rel="stylesheet" href="../../styles/sort-button.css">
-    <link rel="stylesheet" href="./styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="https://unpkg.com/axios@0.26.1/dist/axios.min.js"></script>
-    <script type="text/javascript" src="./script.js"></script>
-  </head>
-  <body onload="init()">
-    <header>
-      <div id="top">
-        <!--back-button component-->
-        <a href="../../index.html">
-          <button type="button" name="button" class="back-button">
-            <div> Home </div>
-            <img class="chevron-left" src="../../assets/chevron-left-circle.svg"/>
+
+<head>
+  <meta charset="utf-8">
+  <title>Lista de Hospedes</title>
+  <link rel="stylesheet" href="../../styles/global.css">
+  <link rel="stylesheet" href="../../styles/header.css">
+  <link rel="stylesheet" href="../../styles/footer.css">
+  <link rel="stylesheet" href="../../styles/back-button.css">
+  <link rel="stylesheet" href="../../styles/pagination-buttons.css">
+  <link rel="stylesheet" href="../../styles/status-button.css">
+  <link rel="stylesheet" href="../../styles/load.css">
+  <link rel="stylesheet" href="../../styles/sort-button.css">
+  <link rel="stylesheet" href="./styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="https://unpkg.com/axios@0.26.1/dist/axios.min.js"></script>
+  <script type="text/javascript" src="./script.js"></script>
+</head>
+
+<body onload="init()">
+  <header>
+    <div id="top">
+      <!--back-button component-->
+      <a href="../../index.html">
+        <button type="button" name="button" class="back-button">
+          <div> Home </div>
+          <img class="chevron-left" src="../../assets/chevron-left-circle.svg" />
+        </button>
+      </a>
+      <!--back-button component-->
+      <div class="title">
+        Customers
+      </div>
+      <div class="header-right-buttons">
+        <a href="../RegisterCustomer/index.html">
+          <button type="button" name="more" class="more-button">
+            <img src="./../../assets/more.svg">
           </button>
         </a>
-        <!--back-button component-->
-        <div class="title">
-          Customers
-        </div>
-        <div class="header-right-buttons">
-          <a href="../RegisterCustomer/index.html">
-            <button type="button" name="more" class="more-button">
-              <img src="./../../assets/more.svg">
-            </button>
-          </a>
-          <button type="button" name="logout" class="more-button" onclick="logout()">
-            <img src="./../../assets/power-off.svg" width="20px">
-          </button>
-        </div>
+        <button type="button" name="logout" class="more-button" onclick="logout()">
+          <img src="./../../assets/power-off.svg" width="20px">
+        </button>
       </div>
-      <div id="hostel-mark">
-        Sparkling Water Hostel
+    </div>
+    <div id="hostel-mark">
+      Sparkling Water Hostel
+    </div>
+  </header>
+  <section>
+    <div class="options">
+      <div id="entries">
+        Show
+        <select id="page-size" onchange="handleSwapPage(page.pageNumber)">
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+          <option value="30">30</option>
+        </select>
+        customers
       </div>
-    </header>
-    <section>
-      <div class="options">
-        <div id="entries">
-          Show
-          <select id="page-size" onchange="handleSwapPage(page.pageNumber)">
-            <option value="10">10</option>
-            <option value="15">15</option>
-            <option value="20">20</option>
-            <option value="25">25</option>
-            <option value="30">30</option>
-          </select>
-          customers
-        </div>
-        <div id="search">
-          <button onclick="cleanSearch()"><img src="./../../assets/clean.svg" width="10" alt=""></button>
-          <input type="text" id="page-search" value="" placeholder="Search">
-          <button onclick="handleSwapPage(1)"><img src="./../../assets/search.svg" width="10" alt=""></button>
-        </div>
-
-        <div id="total-customers">
-          total of <span id="total-customers-value">0</span> customers
-        </div>
+      <div id="search">
+        <button onclick="handleCleanSearch()"><img src="./../../assets/clean.svg" width="10"></button>
+        <input type="text" id="page-search" value="" placeholder="Search">
+        <button onclick="handleSwapPage(1)"><img src="./../../assets/search.svg" width="10"></button>
       </div>
-      <table id="customers" cellspacing="0" cellpadding="0">
 
-        <thead>
-          <tr>
-            <th><div class="contentHeader"><div># </div></div></th>
-            <th><div class="contentHeader"><div>
-              Phone
-            </div></div></th>
-            <th><div class="contentHeader"><div>First Name </div></div></th>
-            <th><div class="contentHeader"><div>Last Name </div></div></th>
-            <th><div class="contentHeader"><div>Email </div></div></th>
-            <th><div class="contentHeader"><div>Status </div></div></th>
+      <div id="total-customers">
+        total of <span id="total-customers-value">0</span> customers
+      </div>
+    </div>
+    <table id="customers" cellspacing="0" cellpadding="0">
 
-          </tr>
-        </thead>
+      <thead>
+        <tr>
+          <th>
+            <div class="contentHeader">
+              <div># </div>
+            </div>
+          </th>
+          <th>
+            <div class="contentHeader">
+              <div>
+                Phone
+              </div>
+            </div>
+          </th>
+          <th>
+            <div class="contentHeader">
+              <div>First Name </div>
+            </div>
+          </th>
+          <th>
+            <div class="contentHeader">
+              <div>Last Name </div>
+            </div>
+          </th>
+          <th>
+            <div class="contentHeader">
+              <div>Email </div>
+            </div>
+          </th>
+          <th>
+            <div class="contentHeader">
+              <div>Status </div>
+            </div>
+          </th>
 
-        <tbody>
+        </tr>
+      </thead>
 
-                    <!-- <tr>
+      <tbody>
+
+        <!-- Formato das linhas que serão renderizadas:
+                    <tr>
                       <td class="table-index">id</td>
                       <td>first_name</td>
                       <td>last_name</td>
@@ -102,24 +129,28 @@
                             </div>
                           </div>
                       </td>
-                    </tr> -->
+                    </tr> 
+          -->
+      </tbody>
+    </table>
+    <div id='no-result'>No results!</div>
+    <div id="pagination-buttons">
+      <button type="button" id="button-left" onclick="handleSwapPage(page.pageNumber - 1)"> <img
+          src="./../../assets/chevron-left.svg" width="15"> </button>
+      <div class="container-button-pag">
 
-        </tbody>
-      </table>
-      <div id='no-result'>No results!</div>
-      <div id="pagination-buttons">
-        <button type="button" id="button-left" onclick="handleSwapPage(page.pageNumber - 1)"> <img src="./../../assets/chevron-left.svg" width="15"> </button>
-        <div class="container-button-pag">
-
-        </div>
-        <div id="page-load" class="load"></div>
-        <button type="button" id="button-right" onclick="handleSwapPage(page.pageNumber + 1)"> <img src="./../../assets/chevron-left.svg" width="15"> </button>
       </div>
+      <div id="page-load" class="load"></div>
+      <button type="button" id="button-right" onclick="handleSwapPage(page.pageNumber + 1)"> <img
+          src="./../../assets/chevron-left.svg" width="15"> </button>
+    </div>
 
-    </section>
-    <footer>
-      <p>&copy Team 2 - Trabalho GCVA</p>
-      <a href="https://github.com/celso-patiri/hostel-app-gcva.git"><button type="button" style="background: none; border: none">  <img src="./../../assets/github.svg" width="20"></button></a>
-    </footer>
-  </body>
+  </section>
+  <footer>
+    <p>&copy Team 2 - Trabalho GCVA</p>
+    <a href="https://github.com/celso-patiri/hostel-app-gcva.git"><button type="button"
+        style="background: none; border: none"> <img src="./../../assets/github.svg" width="20"></button></a>
+  </footer>
+</body>
+
 </html>

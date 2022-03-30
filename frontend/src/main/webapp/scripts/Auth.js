@@ -13,7 +13,7 @@ class Auth {
     //faz login
   }
 
-  logoff(){
-    //faz logoff
+  logout(){
+    //faz logout
   }
 }
