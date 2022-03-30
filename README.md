@@ -32,6 +32,8 @@ Para instalar o hostel-app-gcva, siga estas etapas:
 ```
 git clone https://github.com/celso-patiri/hostel-app-gcva.git
 ```
+> Se vc já tem o repositório hostel-app-gcva instalado, rode o comando `make drop` no seu repositório local antes de reiniciar o projeto com os passos abaixo
+
 2. Dentro do diretório em que o repositório foi iniciado, execute na primeira vez (isso inicia os containers mysql e payara-server):
 ```
 make init
