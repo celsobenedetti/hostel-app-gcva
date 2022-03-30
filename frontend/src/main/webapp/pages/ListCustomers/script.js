@@ -223,9 +223,20 @@ function sortTableByColumn(button, field, ord) {
     return;
   }
 
-  let elements = [
+  var elements = [
     ...page.elements
   ]
+
+  function compareFields(a, b, field) {
+  if (a[field] > b[field]) {
+    return 1;
+  }
+  if (a[field] < b[field]) {
+    return -1;
+  }
+  // a must be equal to b
+  return 0;
+  }
 
   switch (ord) {
     case "none":
@@ -234,11 +245,11 @@ function sortTableByColumn(button, field, ord) {
       break;
     case "asc":
       button.onclick = () => sortTableByColumn(button, field, "desc")
-      showListCustomers(elements.sort((a, b) => a[field] > b[field]))
+      showListCustomers(elements.sort((a, b) => compareFields(a, b, field)))
       break;
     case "desc":
       button.onclick = () => sortTableByColumn(button, field, "none")
-      showListCustomers(elements.sort((a, b) => a[field] < b[field]))
+      showListCustomers(elements.sort((a, b) => compareFields(b, a, field)))
       break;
     default:
   }
