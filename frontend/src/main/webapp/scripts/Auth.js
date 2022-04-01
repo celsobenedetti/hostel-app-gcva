@@ -39,4 +39,12 @@ class Auth {
     sessionStorage.clear();
     window.location.reload()
   }
+
+  static authenticate(){
+    // Auth é uma classe em ./script/Auth.js
+    const auth = new Auth()
+    // Se prepareAuth falhar (return false), quer dizer que nenhuma seção de login foi criada
+    if (!auth.prepareAuth(request)) window.location.href = "../../index.html"
+
+  }
 }

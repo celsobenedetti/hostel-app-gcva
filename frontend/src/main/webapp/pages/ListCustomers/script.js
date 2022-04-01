@@ -311,14 +311,9 @@ class SortPage {
 }
 
 
-
 var page = new Pagination(htmlElements)
 
 async function init() {
-  // Auth é uma classe em ./script/Auth.js
-  const auth = new Auth()
-  // Se prepareAuth falhar (return false), quer dizer que nenhuma seção de login foi criada
-  if (!auth.prepareAuth(request)) window.location.href = "../../index.html"
 
   await page.constructPage(1) //Inicia a página 1
   let sortPage = new SortPage(page, htmlElements)
