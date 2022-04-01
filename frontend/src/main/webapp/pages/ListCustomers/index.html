@@ -19,7 +19,7 @@
   <script type="text/javascript" src="./script.js"></script>
 </head>
 
-<body onloadstart="Auth.authenticator()" onload="init()">
+<body onload="init()">
   <header>
     <div id="top">
       <!--back-button component-->
@@ -39,7 +39,7 @@
             <img src="./../../assets/more.svg">
           </button>
         </a>
-        <button type="button" name="logout" class="more-button" onclick="logout()">
+        <button type="button" name="logout" class="more-button" onclick="Auth.logout()">
           <img src="./../../assets/power-off.svg" width="20px">
         </button>
       </div>
