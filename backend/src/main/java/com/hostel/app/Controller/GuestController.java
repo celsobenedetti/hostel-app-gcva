@@ -55,6 +55,7 @@ public class GuestController {
     }
 
     @GET
+    @RolesAllowed({"RSM", "RSP"})
     public Page<Guest> page(@QueryParam("page") int page, @QueryParam("size") int size) {
         List<Guest> result = guestRepository.findAllWithLimit(size * (page - 1) , size);
         int totalSize = guestRepository.findAll().size();
@@ -62,6 +63,7 @@ public class GuestController {
     }
 
     @GET
+    @RolesAllowed({"RSM", "RSP"})
     @Path("search")
     public Page<Guest> search(@QueryParam("q") String q, @QueryParam("page") int page, @QueryParam("size") int size) {
         List<Guest> result = guestRepository.findByFirstnameOrLastNameWithLimit(q, size * (page - 1) , size);

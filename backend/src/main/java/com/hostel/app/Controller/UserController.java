@@ -35,16 +35,6 @@ public class UserController {
             return Response.status(400, e.getMessage()).build();
         }
     }
-//    @POST
-//    public String createNewUser(User newUser){
-//        try {
-//            //userRepository.save(newUser);
-//            return newUser.getUsername();
-//        } catch (Exception e) {
-//            return e.getMessage();
-//        }
-//    }
-
 
     @DELETE
     @Path("{id}")
@@ -58,5 +48,18 @@ public class UserController {
     public List<User> getAll () {
         return userRepository.findAll();
     }
+
+    @POST
+    @Path("/login")
+    public boolean login(User user) {
+        try {
+            User userLogin = userRepository.findByUsername(user.getUsername());
+            return userLogin.getPassword().equals(user.getPassword());
+        }  catch (Exception e) {
+            return false;
+        }
+
+    }
+
 
 }

@@ -1,19 +1,42 @@
 //Implementar autenticação
 class Auth {
 
-  getAuth(){
-    //obtem se o usuário tá logado
+  isAuth = () => !!sessionStorage.getItem("userCredencial")
+
+  setAuth(userCredencial){
+    sessionStorage.setItem("userCredencial", JSON.stringify(userCredencial))
   }
 
-  setAuth(){
-    //defini que o usuário está logado
+  // Se prepareAuth falhar (return false), quer dizer que nenhuma seção de login foi criada
+  prepareAuth(axiosInstance) {
+    var credencial = JSON.parse(sessionStorage.getItem("userCredencial"))
+
+    if (credencial){
+      axiosInstance.interceptors.request.use((config) => {
+        config.auth = credencial;
+        return config;
+      })
+      return true
+    }
+    return false
   }
 
-  login(){
-    //faz login
+  async login(username, password){
+    const {data: response} = await axios.post("http://localhost:8080/backend/api/user/login", {
+      username,
+      password
+    });
+    if (response){
+      this.setAuth({username, password})
+      this.prepareAuth(axios)
+
+    }
+
+    return response
   }
 
   logout(){
-    //faz logout
+    sessionStorage.clear();
+    window.location.reload()
   }
 }
