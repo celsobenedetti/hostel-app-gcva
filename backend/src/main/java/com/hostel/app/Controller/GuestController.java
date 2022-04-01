@@ -1,10 +1,11 @@
 package com.hostel.app.Controller;
 
+import com.hostel.app.Controller.Utils.Page;
 import com.hostel.app.Entity.Guest;
 import com.hostel.app.Repository.GuestRepository;
-import com.hostel.app.Service.Page;
-import com.hostel.app.Service.Pageable;
 
+import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

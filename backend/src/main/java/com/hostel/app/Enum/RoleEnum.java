@@ -1,6 +1,9 @@
 package com.hostel.app.Enum;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
 public enum RoleEnum {
-    ADMIN,
-    NORMAL
+    RESERVATION_MANAGER,
+    RECEPCIONIST
 }

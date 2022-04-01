@@ -6,16 +6,22 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
-public class User {
+@Table(name = "user")
+public class User implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @Column(name = "username", length = 30)
     private String username;
+
+    @Column(name = "password", length = 20)
     private String password;
-    private RoleEnum role;
+
+    @Column(name = "role")
+    @Enumerated(EnumType.ORDINAL)
+    private RoleEnum role = RoleEnum.RECEPCIONIST; //A atribuição define um valor default
 }
