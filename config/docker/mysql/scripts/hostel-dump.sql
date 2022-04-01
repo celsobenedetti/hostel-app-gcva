@@ -14,6 +14,12 @@ CREATE TABLE GUEST(
   STATUS tinyint(1) default 1 NOT NULL
 );
 
+CREATE TABLE user (
+    username varchar(30) primary key,
+    password varchar(20) not null,
+    role int not null
+);
+
 /* INSERT DATA */
 
 INSERT INTO GUEST (LAST_NAME, FIRST_NAME, EMAIL_ADDRESS, COUNTRY, ADDRESS, STATE, PHONE_NUMBER)
