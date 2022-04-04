@@ -1,11 +1,13 @@
 package com.hostel.app.Entity;
 
 import com.hostel.app.Enum.RoleEnum;
+import com.hostel.app.Validation.ValidUser;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import java.io.Serializable;
 
 @Getter
@@ -13,6 +15,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Entity
 @Table(name = "user")
+@ValidUser
 public class User implements Serializable {
     @Id
     @Column(name = "username", length = 30)

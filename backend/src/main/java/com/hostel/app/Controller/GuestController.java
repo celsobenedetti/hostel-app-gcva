@@ -37,6 +37,7 @@ public class GuestController {
     }
 
     @POST
+    @RolesAllowed("RSM")
     public Response createNewGuest(Guest newGuest){
         try {
             guestRepository.save(newGuest);
@@ -48,6 +49,7 @@ public class GuestController {
 
 
     @DELETE
+    @RolesAllowed("RSM")
     @Path("{id}")
     public Response delete(@PathParam("id") long id) {
         guestRepository.remove(id);

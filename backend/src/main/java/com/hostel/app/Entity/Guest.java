@@ -1,10 +1,12 @@
 package com.hostel.app.Entity;
 
+import com.hostel.app.Validation.ValidGuest;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.io.Serializable;
 
 @Getter
@@ -12,6 +14,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Entity
 @Table(name = "GUEST")
+@ValidGuest
 public class Guest implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

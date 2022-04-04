@@ -16,17 +16,20 @@ import java.util.List;
 @Path("user")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
+
 public class UserController {
     @Inject
     UserRepository userRepository;
 
     @GET
     @Path("/{id}")
+    @RolesAllowed("RSM")
     public User getUserByUsername(@PathParam("id") String username){
         return userRepository.findByUsername(username);
     }
 
     @POST
+    @RolesAllowed("RSM")
     public Response createNewUser(User newUser){
         try {
             userRepository.save(newUser);
@@ -38,6 +41,7 @@ public class UserController {
 
     @DELETE
     @Path("{id}")
+    @RolesAllowed("RSM")
     public Response delete(@PathParam("id") long id) {
         userRepository.remove(id);
         return Response.status(200).build();
@@ -45,6 +49,7 @@ public class UserController {
 
     @GET
     @Path("/all")
+    @RolesAllowed("RSM")
     public List<User> getAll () {
         return userRepository.findAll();
     }
