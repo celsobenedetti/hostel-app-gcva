@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100&family=Roboto:wght@100&display=swap');
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+#header-1{
+	
+  position: absolute;
+  width: 611px;
+  height: 1024px;
+  left: 0px;
+  top: 0px;	
+	background-color:#2562FF;
+  
+	text-align: center;
+	align-content: center;
+}
+
+#header-2{
+	position: absolute;
+	float: right;
+	width: 69%;
+	height: 1024px;
+	
+	text-align: center;
+	align-content: center;
+}
+
+#header-1{
+	position: absolute;
+	float: left;
+	width: 40vw;
+	height: 1024px;
+	
+	background-color:#2562FF;
+	
+	text-align: center;
+	align-content: center;
+}
+
+#header-2{
+	position: relative;
+	float: right;
+	width: 60%;
+	height: 1024px;
+	
+	text-align: center;
+	align-content: center;
+}
+
+#cadastro{
+	font-family: roboto;
+	font-weight: bold;
+	color: #2562FF;
+	position: absolute;
+	padding: 20px;
+	cursor: pointer;
+	top: 0px;
+	right: 0px;
+}
+
+#lista{
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  background: #C4C4C4;
+  color: #2562FF;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  border: none;
+  overflow: hidden;
+}
+
+#titulo{
+	font-family: "Poppins";
+	font-style: normal;
+	color: #FFFFFF;
+}
+
+
+#hospede{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 30px;
+  text-align: center;
+
+  color: #FFFFFF;
+}
+
+#descricao{
+	text-align: center;
+	font-family: 'Montserrat';
+	color: #FFFFFF;
+}
+
+#sparkling{
+	position: relative;
+	bottom: 0;
+	font-family: roboto;
+	color: #B4B1B1;
+}
+
+#username, #phone, #adress, #email, #country, #state {
+
+	border-radius: 30px;
+	padding: 12px;
+	background-color: #C4C4C4;
+
+}
+
+#username{
+  width: 400px;
+  padding: 12px;
+	border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+#phone{
+  width: 400px;
+  padding: 12px;
+	border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+#adress{
+  width: 400px;
+  padding: 12px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+#email{
+  width: 400px;
+  padding: 12px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+#country{
+  width: 185px;
+  padding: 12px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+#state{
+  width: 185px;
+  padding: 12px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+#cadastrar{
+	width: 100px;
+  padding: 12px;
+  border-radius: 30px;
+  background: #C4C4C4;
+ 
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  border: none;
+  overflow: hidden;
+  color: #FFFFFF;
+}
+
+::placeholder { 
+  color: #FFFFFF;  
+  opacity: 1; 
+}
+
+.titulos{
+
+	width: 90%;
+	padding: 15px;
+	display: flex; 
+	justify-content: space-around; 
+	align-items: center;
+}
+
+.campos{
+	position: relative;
+	top: 20%;
+}
+
+.listagem{
+	position: relative;
+	top: 39%;
+}
+
+*::-webkit-scrollbar{
+  width: 9px;
+}
+*::-webkit-scrollbar-track {
+  width: 9px !important;
+  background: ${colors.secondary};
+}
+*::-webkit-scrollbar-thumb {
+  width: 9px;
+  border-radius: 5px;
+  background: #e3e3e3;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+#horizon{
+  display: inline-block;
+}
