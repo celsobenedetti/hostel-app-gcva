@@ -1,26 +1,6 @@
 const request = axios.create({ baseURL: "http://localhost:8080/backend/api/guests/" })
 Auth.validate(request)
 
-
-function showBanner(status, message){
-  getStatusContext = {
-    error: {
-      message: (messageError) => `ERRO: ${messageError}`,
-      color: "#CC2222"
-    },
-
-    success: {
-      message: () => `Sucesso`,
-      color: "#008000"
-    }
-  }
-  var banner = document.querySelector("#status-banner")
-  banner.innerHTML = getStatusContext[status].message(message)
-  banner.style.display = 'flex';
-  banner.style.background = getStatusContext[status].color
-  banner.onanimationend = () => banner.style.display = 'none';
-}
-
 async function handleSubmit(e){
   e.preventDefault()
   const {firstName, lastName, address, email, phone, country, state} = e.target.elements
