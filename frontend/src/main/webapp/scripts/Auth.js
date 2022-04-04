@@ -40,7 +40,7 @@ class Auth {
     window.location.reload()
   }
 
-  static authenticate(axiosInstance){
+  static validate(axiosInstance){
     // Auth é uma classe em ./script/Auth.js
     const auth = new Auth()
     // Se prepareAuth falhar (return false), quer dizer que nenhuma seção de login foi criada

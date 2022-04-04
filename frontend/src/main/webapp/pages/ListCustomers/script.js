@@ -1,5 +1,5 @@
 const request = axios.create({ baseURL: "http://localhost:8080/backend/api/guests" })
-Auth.authenticate(request)
+Auth.validate(request)
 
 // centraliza o acesso a elementos html
 const htmlElements = () => ({
