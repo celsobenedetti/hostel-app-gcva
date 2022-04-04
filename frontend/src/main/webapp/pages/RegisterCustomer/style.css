@@ -1,0 +1,199 @@
+#register-main {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+#header-1 {
+  position: relative;
+  width: 40%;
+  max-width: 400px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+
+  background-color: #2562FF;
+
+  text-align: center;
+  align-content: center;
+}
+
+#header-2 {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  align-content: center;
+}
+
+#cadastro {
+  font-family: roboto;
+  font-weight: bold;
+  color: #2562FF;
+  position: absolute;
+  padding: 20px;
+  cursor: pointer;
+  top: 0px;
+  right: 0px;
+}
+
+
+#titulo {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+
+#hospede {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 30px;
+  text-align: center;
+
+  color: #FFFFFF;
+}
+
+#descricao {
+  text-align: center;
+  font-family: 'Montserrat';
+  color: #FFFFFF;
+}
+
+#sparkling {
+  position: relative;
+  bottom: 0;
+  font-family: roboto;
+  color: #B4B1B1;
+}
+
+#firstName,
+#lastName,
+#phone,
+#address,
+#email,
+#country,
+#state {
+  border-radius: 30px;
+  padding: 12px;
+  background-color: #C4C4C4;
+  text-align: center;
+}
+
+#firstName, #lastName {
+  width: 400px;
+  padding: 12px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+#phone {
+  width: 400px;
+  padding: 12px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+#address {
+  width: 400px;
+  padding: 12px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+#email {
+  width: 400px;
+  padding: 12px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+#country {
+  width: 185px;
+  padding: 12px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+#state {
+  width: 185px;
+  padding: 12px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+#cadastrar {
+  width: 100px;
+  padding: 12px;
+  border-radius: 30px;
+  background: #C4C4C4;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  border: none;
+  overflow: hidden;
+  color: #FFFFFF;
+  transition: all .2s;
+}
+
+#cadastrar:hover {
+  transform: scale(1.1);
+  background: #2562FF;
+  color: white;
+  font-weight: 500;
+}
+
+.campos input::placeholder {
+  color: #FFFFFF;
+}
+
+.titulos {
+
+  width: 90%;
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.listagem {
+  position: relative;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#horizon {
+  display: inline-block;
+}
