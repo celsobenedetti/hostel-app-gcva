@@ -1,101 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100&family=Roboto:wght@100&display=swap');
-
-body {
+#register-main {
+  position: relative;
+  height: 100vh;
   width: 100%;
+  display: flex;
+}
+
+#header-1 {
+  position: relative;
+  width: 40%;
+  max-width: 400px;
   height: 100%;
-  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+
+  background-color: #2562FF;
+
+  text-align: center;
+  align-content: center;
 }
 
-button {
-  cursor: pointer;
-  transition: transform .2s;
+#header-2 {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  align-content: center;
 }
 
-button:hover {
-  transform: scale(1.1);
-}
-
-#header-1{
-	
-  position: absolute;
-  width: 611px;
-  height: 1024px;
-  left: 0px;
-  top: 0px;	
-	background-color:#2562FF;
-  
-	text-align: center;
-	align-content: center;
-}
-
-#header-2{
-	position: absolute;
-	float: right;
-	width: 69%;
-	height: 1024px;
-	
-	text-align: center;
-	align-content: center;
-}
-
-#header-1{
-	position: absolute;
-	float: left;
-	width: 40vw;
-	height: 1024px;
-	
-	background-color:#2562FF;
-	
-	text-align: center;
-	align-content: center;
-}
-
-#header-2{
-	position: relative;
-	float: right;
-	width: 60%;
-	height: 1024px;
-	
-	text-align: center;
-	align-content: center;
-}
-
-#cadastro{
-	font-family: roboto;
-	font-weight: bold;
-	color: #2562FF;
-	position: absolute;
-	padding: 20px;
-	cursor: pointer;
-	top: 0px;
-	right: 0px;
-}
-
-#lista{
-  width: 100px;
-  height: 30px;
-  border-radius: 15px;
-  background: #C4C4C4;
+#cadastro {
+  font-family: roboto;
+  font-weight: bold;
   color: #2562FF;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 1em;
-  border: none;
-  overflow: hidden;
-}
-
-#titulo{
-	font-family: "Poppins";
-	font-style: normal;
-	color: #FFFFFF;
+  position: absolute;
+  padding: 20px;
+  cursor: pointer;
+  top: 0px;
+  right: 0px;
 }
 
 
-#hospede{
+#titulo {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+
+#hospede {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 300;
@@ -106,46 +69,33 @@ button:hover {
   color: #FFFFFF;
 }
 
-#descricao{
-	text-align: center;
-	font-family: 'Montserrat';
-	color: #FFFFFF;
+#descricao {
+  text-align: center;
+  font-family: 'Montserrat';
+  color: #FFFFFF;
 }
 
-#sparkling{
-	position: relative;
-	bottom: 0;
-	font-family: roboto;
-	color: #B4B1B1;
+#sparkling {
+  position: relative;
+  bottom: 0;
+  font-family: roboto;
+  color: #B4B1B1;
 }
 
-#username, #phone, #adress, #email, #country, #state {
-
-	border-radius: 30px;
-	padding: 12px;
-	background-color: #C4C4C4;
-
-}
-
-#username{
-  width: 400px;
+#firstName,
+#lastName,
+#phone,
+#address,
+#email,
+#country,
+#state {
+  border-radius: 30px;
   padding: 12px;
-	border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
+  background-color: #C4C4C4;
+  text-align: center;
 }
 
-#phone{
-  width: 400px;
-  padding: 12px;
-	border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
-}
-
-#adress{
+#firstName, #lastName {
   width: 400px;
   padding: 12px;
   border-top-style: hidden;
@@ -154,7 +104,7 @@ button:hover {
   border-bottom-style: hidden;
 }
 
-#email{
+#phone {
   width: 400px;
   padding: 12px;
   border-top-style: hidden;
@@ -163,7 +113,25 @@ button:hover {
   border-bottom-style: hidden;
 }
 
-#country{
+#address {
+  width: 400px;
+  padding: 12px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+#email {
+  width: 400px;
+  padding: 12px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+#country {
   width: 185px;
   padding: 12px;
   border-top-style: hidden;
@@ -172,7 +140,7 @@ button:hover {
   border-bottom-style: hidden;
 }
 
-#state{
+#state {
   width: 185px;
   padding: 12px;
   border-top-style: hidden;
@@ -181,61 +149,51 @@ button:hover {
   border-bottom-style: hidden;
 }
 
-#cadastrar{
-	width: 100px;
+#cadastrar {
+  width: 100px;
   padding: 12px;
   border-radius: 30px;
   background: #C4C4C4;
- 
+
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 1em;
   border: none;
   overflow: hidden;
   color: #FFFFFF;
+  transition: all .2s;
 }
 
-::placeholder { 
-  color: #FFFFFF;  
-  opacity: 1; 
+#cadastrar:hover {
+  transform: scale(1.1);
+  background: #2562FF;
+  color: white;
+  font-weight: 500;
 }
 
-.titulos{
-
-	width: 90%;
-	padding: 15px;
-	display: flex; 
-	justify-content: space-around; 
-	align-items: center;
+.campos input::placeholder {
+  color: #FFFFFF;
 }
 
-.campos{
-	position: relative;
-	top: 20%;
+.titulos {
+
+  width: 90%;
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.listagem{
-	position: relative;
-	top: 39%;
+
+.listagem {
+  position: relative;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
-*::-webkit-scrollbar{
-  width: 9px;
-}
-*::-webkit-scrollbar-track {
-  width: 9px !important;
-  background: ${colors.secondary};
-}
-*::-webkit-scrollbar-thumb {
-  width: 9px;
-  border-radius: 5px;
-  background: #e3e3e3;
-}
-
-::-webkit-input-placeholder {
-  text-align: center;
-}
-
-#horizon{
+#horizon {
   display: inline-block;
 }
