@@ -133,6 +133,6 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
 ## 📝 Licença
 
-Esse projeto está sob licença. Veja o arquivo [Ainda não definido](LICENSE.md) para mais detalhes.
+Esse projeto está sob licença. Veja o arquivo [LICENSE](https://github.com/GuilhermeAGouveia/hostel-app-gcva/blob/main/LICENSE) para mais detalhes.
 
-[⬆ Voltar ao topo](#nome-do-projeto)<br>
+[⬆ Voltar ao topo](#hostel-app-gcva)<br>
