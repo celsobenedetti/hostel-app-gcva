@@ -133,6 +133,6 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
 ## 📝 Licença
 
-Esse projeto está sob licença. Veja o arquivo [Ainda não definido](LICENSE.md) para mais detalhes.
+Esse projeto está sob licença. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
 [⬆ Voltar ao topo](#nome-do-projeto)<br>
