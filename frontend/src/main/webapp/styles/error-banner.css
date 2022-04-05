@@ -10,7 +10,7 @@
   color: white;
   top: 5px;
   right: -300px;
-  animation: animationBanner 2s;
+  animation: animationBanner 4s;
 }
 
 @keyframes animationBanner {
