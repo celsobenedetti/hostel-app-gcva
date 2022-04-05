@@ -76,6 +76,7 @@ public class GuestController {
     }
 
     @GET
+    @RolesAllowed({"RSM", "RSP"})
     @Path("updateStatus")
     public void updateStatus(@QueryParam("id") Long id, @QueryParam("status") boolean status) {
         guestRepository.updateStatus(id, status);

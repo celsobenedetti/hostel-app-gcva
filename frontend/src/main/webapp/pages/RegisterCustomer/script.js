@@ -20,14 +20,14 @@ async function handleSubmit(e){
     showBanner("success", "")
   } catch (e){
     console.log(e.response)
-    if (true){
-        showBanner("error", "Os dados inseridos abaixo não são validos, tente novamente")
-    } else {
-        showBanner("error", "Causa desconhecida!")
+    const errorMessage = {
+      "400": "Os dados inseridos abaixo não são validos, tente novamente",
+      "401": "Vc precisa valer login: <a href='http://localhost:8080/frontend/pages/Login/'>Login</a>",
+      "403": "Seu usuário não tem permissão para inserir hóspedes",
+      "default": "Causa desconhecida!"
     }
+    showBanner("error", errorMessage[e.response.status || "default"])
   }
-
-
 }
 
 function init(){

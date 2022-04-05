@@ -2,11 +2,11 @@ async function handleLogin(){
 	var username = document.getElementById("username").value;
 	var password = document.getElementById("pass").value;
 
-	// if(password.length < 8){
-	// 	// showBanner é uma função em ./scrips/banner.js
-	// 	showBanner("error", "A senha deve conter 8 caracteres");
-	// 	return;
-	// }
+	if(password.length < 8){
+		// showBanner é uma função em ./scrips/banner.js
+		showBanner("error", "A senha deve conter 8 caracteres");
+		return;
+	}
 
 	try {
 		// response retorna true para sucesso, e false para error

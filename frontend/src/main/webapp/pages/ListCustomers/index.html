@@ -26,7 +26,7 @@
       <a href="../../index.html">
         <button type="button" name="button" class="back-button">
           <div> Home </div>
-          <img class="chevron-left" src="../../assets/chevron-left-circle.svg" />
+          <img class="chevron-left" src="../../icons/chevron-left-circle.svg" />
         </button>
       </a>
       <!--back-button component-->
@@ -36,11 +36,11 @@
       <div class="header-right-buttons">
         <a href="../RegisterCustomer/index.html">
           <button type="button" name="more" class="more-button">
-            <img src="./../../assets/more.svg">
+            <img src="./../../icons/more.svg">
           </button>
         </a>
         <button type="button" name="logout" class="more-button" onclick="Auth.logout()">
-          <img src="./../../assets/power-off.svg" width="20px">
+          <img src="./../../icons/power-off.svg" width="20px">
         </button>
       </div>
     </div>
@@ -62,9 +62,9 @@
         customers
       </div>
       <div id="search">
-        <button onclick="handleCleanSearch()"><img src="./../../assets/clean.svg" width="10"></button>
+        <button onclick="handleCleanSearch()"><img src="./../../icons/clean.svg" width="10"></button>
         <input type="text" id="page-search" value="" placeholder="Search">
-        <button onclick="handleSwapPage(1)"><img src="./../../assets/search.svg" width="10"></button>
+        <button onclick="handleSwapPage(1)"><img src="./../../icons/search.svg" width="10"></button>
       </div>
 
       <div id="total-customers">
@@ -137,20 +137,20 @@
     <div id='no-result'>No results!</div>
     <div id="pagination-buttons">
       <button type="button" id="button-left" onclick="handleSwapPage(page.pageNumber - 1)"> <img
-          src="./../../assets/chevron-left.svg" width="15"> </button>
+          src="./../../icons/chevron-left.svg" width="15"> </button>
       <div class="container-button-pag">
 
       </div>
       <div id="page-load" class="load"></div>
       <button type="button" id="button-right" onclick="handleSwapPage(page.pageNumber + 1)"> <img
-          src="./../../assets/chevron-left.svg" width="15"> </button>
+          src="./../../icons/chevron-left.svg" width="15"> </button>
     </div>
 
   </section>
   <footer>
     <p>&copy Team 2 - Trabalho GCVA</p>
     <a href="https://github.com/celso-patiri/hostel-app-gcva.git"><button type="button"
-        style="background: none; border: none"> <img src="./../../assets/github.svg" width="20"></button></a>
+        style="background: none; border: none"> <img src="./../../icons/github.svg" width="20"></button></a>
   </footer>
 </body>
 

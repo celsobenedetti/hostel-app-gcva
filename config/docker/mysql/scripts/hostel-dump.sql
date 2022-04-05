@@ -20,9 +20,10 @@ CREATE TABLE user (
     role int not null
 );
 
-/* INSERT ADMIN USER*/
-
-INSERT INTO user VALUES ('admin', '12345678', 0);
+/* INSERT RESERVATION_MANAGER*/
+INSERT INTO user VALUES ('rsm', '12345678', 0);
+/* INSERT RECEPCIONIST*/
+INSERT INTO user VALUES ('rcp', '12345678', 1);
 
 /* INSERT DATA */
 

@@ -1,0 +1,13 @@
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #2562FF;
+    color: rgb(230, 230, 230);
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+}
