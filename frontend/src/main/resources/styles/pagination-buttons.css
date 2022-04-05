@@ -1,0 +1,69 @@
+#pagination-buttons {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+  margin: 10px auto;
+}
+
+#pagination-buttons button {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: #2562FF;
+  border-radius: 2px;
+  color : white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+  border: none;
+  margin: 0px 2px;
+
+}
+
+#pagination-buttons #selected-page {
+  transform: scale(1.1);
+  font-weight: bold;
+
+}
+
+#pagination-buttons button:hover {
+  font-weight: bold;
+
+}
+
+.container-button-pag {
+  position: relative;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  align-items: flex-end;
+
+}
+
+.container-button-pag .pag-more {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.container-button-pag .pag-more div {
+  position: relative;
+  width: 5px;
+  height: 5px;
+  background: #2562FF;
+  margin: 1px;
+  border-radius: 50%;
+}
+
+
+#button-right,
+#button-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#button-right img {
+  transform: rotate(180deg);
+}

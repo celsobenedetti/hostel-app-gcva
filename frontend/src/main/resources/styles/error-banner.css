@@ -1,0 +1,35 @@
+#status-banner{
+  position: fixed;
+  width: 300px;
+  height: 80px;
+  padding: 10px !important;
+  opacity: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  top: 5px;
+  right: -300px;
+  animation: animationBanner 4s;
+}
+
+@keyframes animationBanner {
+  0% {
+    right: -300px;
+    opacity: 0;
+  }
+  20% {
+    right: 5px;
+    opacity: 1;
+  }
+
+  95% {
+    right: 5px;
+    opacity: 1;
+  }
+
+  100% {
+    right: -300px;
+    opacity: 0;
+  }
+}

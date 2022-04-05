@@ -231,7 +231,7 @@ class SortPage {
     this.htmlElements = htmlElements
   }
   getContentButton(ord) {
-    let contentDiv = `<img width="10" src="./../../assets/chevron-up.svg">`
+    let contentDiv = `<img width="10" src="./../../icons/chevron-up.svg">`
     let contentButton = {
       "asc": `
         <div style="opacity: 1;"> ${contentDiv} </div>

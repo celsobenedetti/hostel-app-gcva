@@ -1,0 +1,50 @@
+.status-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 20px;
+
+  overflow: hidden;
+}
+
+.status-container * {
+  position: relative;
+}
+
+.status-container input {
+  position: absolute;
+  width: calc(100% * 2);
+  height: calc(100% * 2);
+  opacity: 0;
+  z-index: 1;
+}
+
+.status-fake-button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #CACACA;
+  border-radius: 10px;
+}
+
+.status-fake-button-mark {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #aAaAaA;
+  margin: 2px 0px;
+  margin-left: 2px;
+  transition: margin-left .1s ease-in, background-color .1s;
+}
+
+.status-container input:checked ~ div {
+  background: #2562FF;
+}
+
+.status-container input:checked ~ div div {
+  background-color: white;
+  margin-left: 22px;
+}
