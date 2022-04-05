@@ -24,12 +24,14 @@ public class GuestController {
     private GuestRepository guestRepository;
 
     @GET
+    @RolesAllowed({"RSM", "RSP"})
     @Path("all")
     public List<Guest> getGuests(){
         return guestRepository.findAll();
     }
 
     @GET
+    @RolesAllowed({"RSM", "RSP"})
     @Path("{id}")
 
     public Guest getGuestById(@PathParam("id") long id) {
