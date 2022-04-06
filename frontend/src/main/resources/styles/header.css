@@ -9,23 +9,21 @@ header {
 header #top {
   position: relative;
   height: 20%;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 20px;
+  margin: 0px 20px;
 }
 
 header #top .title {
   font-family: 'Poppins';
   font-style: normal;
+  position: absolute;
   font-weight: 700;
   font-size: 40px;
   line-height: 72px;
-  display: flex;
-  align-items: center;
+  width: 100%;
   text-align: center;
-
   color: white;
 }
 
