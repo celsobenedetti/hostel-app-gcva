@@ -19,7 +19,6 @@ async function handleSubmit(e){
     const response = await request.post("", data)
     showBanner("success", "")
   } catch (e){
-    console.log(e.response)
     const errorMessage = {
       "400": "Os dados inseridos abaixo não são validos, tente novamente",
       "401": "Vc precisa valer login: <a href='http://localhost:8080/frontend/pages/Login/'>Login</a>",
@@ -33,6 +32,6 @@ async function handleSubmit(e){
 function init(){
 
   //form
-  var form = document.querySelector("#loginForm")
+  var form = document.querySelector("#registerForm")
   form.addEventListener("submit", handleSubmit)
 }

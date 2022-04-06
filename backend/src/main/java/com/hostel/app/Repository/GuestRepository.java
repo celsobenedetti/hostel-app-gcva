@@ -45,7 +45,7 @@ public class GuestRepository implements Repository<Guest> {
 
     public List<Guest> findByFirstnameOrLastNameWithLimit(String searchString, int baseNumber, int numberElements) {
         searchString = '%' + searchString + '%';//searchString
-        List result = em.createNativeQuery("SELECT * FROM GUEST WHERE FIRST_NAME LIKE ?1 OR LAST_NAME LIKE ?1 LIMIT " + baseNumber + "," + numberElements, Guest.class)
+        List result = em.createNativeQuery("SELECT * FROM GUEST WHERE FIRST_NAME LIKE ?1 OR LAST_NAME LIKE ?1 OR CONCAT (FIRST_NAME, ' ', LAST_NAME) LIKE ?1 LIMIT " + baseNumber + "," + numberElements, Guest.class)
                 .setParameter(1, searchString)
                 .getResultList();
         return result;
@@ -53,7 +53,7 @@ public class GuestRepository implements Repository<Guest> {
 
     public List<Guest> findByFirstnameOrLastName(String searchString) {
         searchString = '%' + searchString + '%';//searchString
-        List result = em.createNativeQuery("SELECT * FROM GUEST WHERE FIRST_NAME LIKE ?1 OR LAST_NAME LIKE ?1", Guest.class)
+        List result = em.createNativeQuery("SELECT * FROM GUEST WHERE FIRST_NAME LIKE ?1 OR LAST_NAME LIKE ?1 OR CONCAT (FIRST_NAME, ' ', LAST_NAME) LIKE ?1;", Guest.class)
                 .setParameter(1, searchString)
                 .getResultList();
         return result;

@@ -1,4 +1,3 @@
-//Implementar autenticação
 class Auth {
 
   isAuth = () => !!sessionStorage.getItem("userCredencial")

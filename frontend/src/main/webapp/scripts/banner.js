@@ -7,7 +7,7 @@ function showBanner(status, message){
     },
 
     success: {
-      message: () => `Sucesso`,
+      message: (_) => `Sucesso`,
       color: "#008000"
     }
   }
