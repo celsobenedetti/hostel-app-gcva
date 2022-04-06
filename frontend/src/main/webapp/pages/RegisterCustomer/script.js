@@ -1,6 +1,18 @@
 const request = axios.create({ baseURL: "http://localhost:8080/backend/api/guests/" })
 Auth.validate(request)
 
+function showRegisterLoad(control) {
+  var registerButton = document.getElementById("cadastrar")
+	registerButton.innerHTML = control ? "<div id='page-load' style='display: flex;' class='load'></div>" : "Cadastrar"
+	registerButton.style.backgroundColor = control ? "#2562FF" : "#C4C4C4"
+}
+
+function cleanFormFields(formFields) {
+  for (let i in formFields){
+    formFields[i].value = '';
+  }
+}
+
 async function handleSubmit(e){
   e.preventDefault()
   const {firstName, lastName, address, email, phone, country, state} = e.target.elements
@@ -15,9 +27,12 @@ async function handleSubmit(e){
     state: state.value
   }
 
+  showRegisterLoad(true)
   try {
+
     const response = await request.post("", data)
     showBanner("success", "")
+    cleanFormFields(e.target.elements)
   } catch (e){
     const errorMessage = {
       "400": "Os dados inseridos abaixo não são validos, tente novamente",
@@ -26,6 +41,8 @@ async function handleSubmit(e){
       "default": "Causa desconhecida!"
     }
     showBanner("error", errorMessage[e.response.status || "default"])
+  } finally {
+    showRegisterLoad(false)
   }
 }
 
