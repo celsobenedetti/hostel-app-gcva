@@ -10,18 +10,14 @@
   width: 40%;
   max-width: 400px;
   height: 100%;
+  padding-bottom: 20px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 
-  padding-bottom: 20px;
-
   background-color: #2562ff;
-
-  text-align: center;
-  align-content: center;
 }
 
 #header-2 {
@@ -33,9 +29,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  text-align: center;
-  align-content: center;
 }
 
 #cadastro {
@@ -51,7 +44,6 @@
 
 #titulo {
   font-family: "Poppins";
-  font-style: normal;
   font-weight: bold;
   font-size: 2.5em;
   color: #ffffff;
@@ -73,17 +65,14 @@
   width: 90%;
   bottom: 0px;
   background: rgba(0, 0, 0, 0.37);
-  overflow: visible;
 }
 
 #hospede {
   font-family: "Montserrat";
-  font-style: normal;
   font-weight: 300;
   font-size: 15px;
   line-height: 30px;
   text-align: center;
-
   color: #ffffff;
 }
 
@@ -103,73 +92,21 @@
   color: #b4b1b1;
 }
 
-#firstName,
-#lastName,
-#phone,
-#address,
-#email,
-#country,
-#state {
+.campos input {
   border-radius: 30px;
+  font-family: 'Poppins', sans-serif;
   padding: 12px;
   background-color: #c4c4c4;
   text-align: center;
   margin: 10px auto;
-}
-
-#firstName,
-#lastName {
   width: 400px;
   padding: 12px;
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
+  border: none;
 }
 
-#phone {
-  width: 400px;
-  padding: 12px;
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
-}
-
-#address {
-  width: 400px;
-  padding: 12px;
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
-}
-
-#email {
-  width: 400px;
-  padding: 12px;
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
-}
-
-#country {
-  width: 185px;
-  padding: 12px;
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
-}
-
+#country,
 #state {
   width: 185px;
-  padding: 12px;
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
 }
 
 #cadastrar {

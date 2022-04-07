@@ -30,13 +30,15 @@ button:hover {
 *::-webkit-scrollbar{
   width: 9px;
 }
+
 *::-webkit-scrollbar-track {
   width: 9px !important;
-  background: ${colors.secondary};
+  background: #f1f1f1;
 }
+
 *::-webkit-scrollbar-thumb {
   width: 9px;
   border-radius: 5px;
   background: #0047FF;
 }
-}
+

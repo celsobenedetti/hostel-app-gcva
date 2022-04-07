@@ -109,7 +109,7 @@ section * {
 
 #total-customers {
   position: absolute;
-  right: 0px;
+  right: 0;
   font-size: 10px;
   font-weight: lighter;
   color: rgba(0, 0, 0, 0.8) !important;
