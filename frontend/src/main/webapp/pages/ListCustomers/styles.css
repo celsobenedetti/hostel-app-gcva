@@ -183,3 +183,10 @@ section * {
   color: #0047FF !important;
   font-weight: 600;
 }
+
+.delete-button{
+  background: none;
+  border: none;
+  width: 20px;
+  height: 20px;
+}

@@ -58,6 +58,17 @@
   color: #FFFFFF;
 }
 
+.titulos::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 90%;
+  bottom: 0px;
+  background: rgba(0, 0, 0, 0.37);
+  overflow: visible;
+}
+
+
 
 #hospede {
   font-family: 'Montserrat';
@@ -153,14 +164,21 @@
 }
 
 #cadastrar {
-  width: 100px;
+  width: 120px;
+  height: 40px;
   padding: 12px;
   border-radius: 30px;
-  background: #C4C4C4;
+  background-color: #C4C4C4;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0px auto;
 
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-  font-size: 1em;
+  font-size: 0.9em;
   border: none;
   overflow: hidden;
   color: #FFFFFF;
@@ -169,7 +187,7 @@
 
 #cadastrar:hover {
   transform: scale(1.1);
-  background: #2562FF;
+  background-color: #2562FF !important;
   color: white;
   font-weight: 500;
 }
