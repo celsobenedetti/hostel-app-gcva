@@ -4,7 +4,6 @@ import com.hostel.app.Controller.Utils.Page;
 import com.hostel.app.Entity.Guest;
 import com.hostel.app.Repository.GuestRepository;
 
-import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -54,8 +53,12 @@ public class GuestController {
     @RolesAllowed("RSM")
     @Path("{id}")
     public Response delete(@PathParam("id") long id) {
-        guestRepository.remove(id);
-        return Response.status(200).build();
+        try {
+            guestRepository.remove(id);
+            return Response.status(200, "Deletado!").build();
+        } catch (Exception e) {
+            return Response.status(400, e.getMessage()).build();
+        }
     }
 
     @GET
