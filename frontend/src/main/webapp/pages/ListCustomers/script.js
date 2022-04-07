@@ -172,9 +172,13 @@ async function handleDeleteCustomer(id) {
     showTotalCustomers(parseInt(totalCustomers.innerText) - 1);
   } catch (e) {
     console.log(e);
-    if (e.response.status == 403)
-      showBanner("error", "Você não tem permissão para deletar hóspedes");
-    else showBanner("error", "Desconhecido!");
+    const errorMessages = {
+      "400": "Não foi possível deletar o hospede",
+      "404": "Hospede não encontrado",
+      "403": "Você não tem permissão para deletar este hospede",
+      "default": "Erro desconhecido",
+    }
+    showBanner("error", errorMessages[e.response.status || "default"]);
   }
   controlPageLoad(false);
 }
