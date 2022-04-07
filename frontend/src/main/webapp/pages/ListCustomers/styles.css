@@ -25,7 +25,7 @@ section * {
   justify-content: center;
   align-items: center;
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 #entries {
@@ -33,11 +33,11 @@ section * {
   left: 0px;
 }
 
-.options select{
-  background: #0047FF;
-  border: 1px solid  #0047FF;
+.options select {
+  background: #0047ff;
+  border: 1px solid #0047ff;
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 #search {
@@ -45,9 +45,8 @@ section * {
   height: 30px;
   min-width: 200px;
   border-radius: 15px;
-  border: 1px solid #0047FF;
+  border: 1px solid #0047ff;
   display: flex;
-
 }
 
 #search input {
@@ -57,15 +56,14 @@ section * {
   height: 30px;
   width: calc(100% - 60px);
   color: white;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   text-align: center;
-  transition: border .2s;
-
+  transition: border 0.2s;
 }
 
 #search button {
   position: relative;
-  background: #0047FF;
+  background: #0047ff;
   width: 24px;
   height: 24px;
   display: flex;
@@ -78,7 +76,7 @@ section * {
 }
 
 #search button:first-child {
-  background: #0047FF;
+  background: #0047ff;
   width: 24px;
   height: 24px;
   display: flex;
@@ -123,7 +121,7 @@ section * {
 #total-customers span {
   font-size: 10px;
   font-weight: bold;
-  color: #0047FF !important;
+  color: #0047ff !important;
 }
 
 #page-load {
@@ -131,7 +129,7 @@ section * {
 }
 
 .more-button {
-  background: #0047FF;
+  background: #0047ff;
   border: none;
   width: 60px;
   height: 40px;
@@ -148,15 +146,14 @@ section * {
   box-shadow: 0px 3px 10px rgba(0, 10, 10, 0.5);
 }
 
-#customers thead tr{
+#customers thead tr {
   color: white;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 15px;
   height: 40px;
-  background: #0047FF;
+  background: #0047ff;
   box-shadow: 0px 3px 10px rgba(0, 10, 10, 0.5);
 }
-
 
 #customers thead tr th .contentHeader {
   position: relative;
@@ -170,7 +167,7 @@ section * {
 }
 
 #customers tr td {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 15px;
   color: rgba(0, 0, 0, 0.8);
   text-align: center;
@@ -180,11 +177,11 @@ section * {
 }
 
 .table-index {
-  color: #0047FF !important;
+  color: #0047ff !important;
   font-weight: 600;
 }
 
-.delete-button{
+.delete-button {
   background: none;
   border: none;
   width: 20px;
