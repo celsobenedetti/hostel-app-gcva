@@ -33,7 +33,7 @@ function addShowAllOptionInSelect(totalSize) {
 //Formata as linhas que serão exebidas na tabela, retornando o HTML dessas linhas
 getElementTableFormat = element => (
   `
-    <tr>
+    <tr id="tableLine${element.id}">
       <td class="table-index">${element.id}</td>
       <td>${element.phone}</td>
       <td>${element.firstName}</td>
@@ -48,6 +48,13 @@ getElementTableFormat = element => (
             </div>
           </div>
         </div>
+      </td>
+      <td>
+        <button class="delete-button"
+          onclick="handleDeleteCustomer(${element.id})"
+          >
+          <img width="16px" src="./../../icons/trash.svg"/>
+        </button>
       </td>
     </tr>
     `
@@ -71,7 +78,7 @@ function showListCustomers(customers) {
 
 //Exibi o numero total de hospedes que existe no banco de dados
 function showTotalCustomers(total) {
-  let { totalCustomers } = htmlElements()
+  var { totalCustomers } = htmlElements()
   totalCustomers.innerText = total
 }
 
@@ -144,14 +151,31 @@ function controlPageLoad(control) {
   load.style.display = !control ? "none" : "block";
 }
 
-//Funções atribuida ao listener onclick dos alteradores de status no html
+//Função atribuida ao listener onclick dos alteradores de status no html
 async function handleUpdateStatus(id, status) {
   controlPageLoad(true)
   await request.get(`updateStatus?id=${id}&status=${status}`)
   controlPageLoad(false)
 }
 
-//Funções atribuida ao listener onclick do botão de limpar pesquisa
+//Função atribuida ao listener onclick do botão de deletar hospede
+async function handleDeleteCustomer(id) {
+  let { totalCustomers } = htmlElements()
+  controlPageLoad(true)
+  try {
+      await request.delete(`${id}`)
+      document.getElementById("tableLine" + id).style.display = 'none'
+      showTotalCustomers(parseInt(totalCustomers.innerText) - 1)
+
+  } catch (e) {
+    console.log(e)
+    if (e.response.status == 403) showBanner("error", "Você não tem permissão para deletar hóspedes")
+    else showBanner("error", "Desconhecido!")
+  }
+  controlPageLoad(false)
+}
+
+//Função atribuida ao listener onclick do botão de limpar pesquisa
 function handleCleanSearch() {
   let { searchInput } = htmlElements()
   searchInput.value = ''
