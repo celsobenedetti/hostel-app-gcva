@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../styles/global.css" />
     <link rel="stylesheet" href="../../styles/back-button.css" />
     <link rel="stylesheet" href="../../styles/error-banner.css" />
+    <link rel="stylesheet" href="../../styles/form-page.css" />
     <link rel="stylesheet" href="../../styles/load.css" />
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script
@@ -17,18 +18,18 @@
     <script type="text/javascript" src="../../scripts/banner.js"></script>
     <script src="./script.js"></script>
   </head>
-  <body id="login-main" onload="init ()">
-    <section id="esquerda">
+  <body class="form-main" onload="init ()">
+    <section class="section-left">
       <div class="titulos">
-        <h1 id="titulo">Login</h1>
-        <p id="empregado">empregado</p>
+        <h1 class="titulo1">Login</h1>
+        <p class="titulo2">empregado</p>
       </div>
 
-      <p id="elemento">
+      <p class="description">
         Faça login e tenha acesso às funcionalidades de gerenciamento do hostel
       </p>
 
-      <div class="texto">
+      <div class="bottom-text-section-left">
         <!--back-button component-->
         <a id="lista" href="../../index.html">
           <button type="button" name="button" class="back-button">
@@ -44,13 +45,13 @@
         <div id="spark"><a>Sparkling Water Hostel</a></div>
       </div>
     </section>
-    <section id="direita">
+    <section class="section-right">
       <a
         id="cadastro"
         onclick="showBanner('error', 'Funcionalidade indisponível!')"
         >Cadastrar</a
       >
-      <div class="entrada">
+      <div class="form-container">
         <input
           type="text"
           id="username"
@@ -65,7 +66,7 @@
           placeholder="Password"
         />
         <br /><br />
-        <button id="login">Login</button>
+        <button class="submit-button" id="login">Login</button>
       </div>
     </section>
   </body>
