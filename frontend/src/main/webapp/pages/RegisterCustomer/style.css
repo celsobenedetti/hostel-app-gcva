@@ -10,18 +10,14 @@
   width: 40%;
   max-width: 400px;
   height: 100%;
+  padding-bottom: 20px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 
-  padding-bottom: 20px;
-
-  background-color: #2562FF;
-
-  text-align: center;
-  align-content: center;
+  background-color: #2562ff;
 }
 
 #header-2 {
@@ -33,15 +29,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  text-align: center;
-  align-content: center;
 }
 
 #cadastro {
   font-family: "Roboto";
   font-weight: bold;
-  color: #2562FF;
+  color: #2562ff;
   position: absolute;
   padding: 20px;
   cursor: pointer;
@@ -49,118 +42,71 @@
   right: 0px;
 }
 
-
 #titulo {
   font-family: "Poppins";
-  font-style: normal;
   font-weight: bold;
   font-size: 2.5em;
-  color: #FFFFFF;
+  color: #ffffff;
+}
+
+.titulos {
+  position: relative;
+  width: 90%;
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .titulos::after {
-  content: '';
+  content: "";
   position: absolute;
   height: 1px;
   width: 90%;
   bottom: 0px;
   background: rgba(0, 0, 0, 0.37);
-  overflow: visible;
 }
 
-
-
 #hospede {
-  font-family: 'Montserrat';
-  font-style: normal;
+  font-family: "Montserrat";
   font-weight: 300;
   font-size: 15px;
   line-height: 30px;
   text-align: center;
-
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #descricao {
   text-align: center;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: bold;
-	color: #EEEEE3;
+  color: #eeeee3;
   width: 100%;
-  padding: 0px 20px;}
+  padding: 0px 20px;
+}
 
 #sparkling {
   position: relative;
   bottom: 0;
   font-family: "Roboto";
-  color: #B4B1B1;
+  color: #b4b1b1;
 }
 
-#firstName,
-#lastName,
-#phone,
-#address,
-#email,
+.campos input {
+  border-radius: 30px;
+  font-family: 'Poppins', sans-serif;
+  padding: 12px;
+  background-color: #c4c4c4;
+  text-align: center;
+  margin: 10px auto;
+  width: 400px;
+  padding: 12px;
+  border: none;
+}
+
 #country,
 #state {
-  border-radius: 30px;
-  padding: 12px;
-  background-color: #C4C4C4;
-  text-align: center;
-}
-
-#firstName, #lastName {
-  width: 400px;
-  padding: 12px;
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
-}
-
-#phone {
-  width: 400px;
-  padding: 12px;
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
-}
-
-#address {
-  width: 400px;
-  padding: 12px;
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
-}
-
-#email {
-  width: 400px;
-  padding: 12px;
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
-}
-
-#country {
   width: 185px;
-  padding: 12px;
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
-}
-
-#state {
-  width: 185px;
-  padding: 12px;
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
 }
 
 #cadastrar {
@@ -168,7 +114,7 @@
   height: 40px;
   padding: 12px;
   border-radius: 30px;
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
 
   display: flex;
   justify-content: center;
@@ -181,30 +127,28 @@
   font-size: 0.9em;
   border: none;
   overflow: hidden;
-  color: #FFFFFF;
-  transition: all .2s;
+  color: #ffffff;
+  transition: all 0.2s;
 }
 
 #cadastrar:hover {
   transform: scale(1.1);
-  background-color: #2562FF !important;
+  background-color: #2562ff !important;
   color: white;
   font-weight: 500;
 }
 
 .campos input::placeholder {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .titulos {
-
   width: 90%;
   padding: 15px;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-
 
 .listagem {
   position: relative;
