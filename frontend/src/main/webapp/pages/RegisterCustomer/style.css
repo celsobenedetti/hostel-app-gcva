@@ -1,96 +1,4 @@
-#register-main {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-}
-
-#header-1 {
-  position: relative;
-  width: 40%;
-  max-width: 400px;
-  height: 100%;
-  padding-bottom: 20px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-
-  background-color: #2562ff;
-}
-
-#header-2 {
-  position: relative;
-
-  width: 100%;
-  height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#cadastro {
-  font-family: "Roboto";
-  font-weight: bold;
-  color: #2562ff;
-  position: absolute;
-  padding: 20px;
-  cursor: pointer;
-  top: 0px;
-  right: 0px;
-}
-
-#titulo {
-  font-family: "Poppins";
-  font-weight: bold;
-  font-size: 2.5em;
-  color: #ffffff;
-}
-
-.titulos {
-  position: relative;
-  width: 90%;
-  padding: 15px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.titulos::after {
-  content: "";
-  position: absolute;
-  height: 1px;
-  width: 90%;
-  bottom: 0px;
-  background: rgba(0, 0, 0, 0.37);
-}
-
-#hospede {
-  font-family: "Montserrat";
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 30px;
-  text-align: center;
-  color: #ffffff;
-}
-
-#descricao {
-  text-align: center;
-  font-family: "Montserrat";
-  font-weight: bold;
-  color: #eeeee3;
-  width: 100%;
-  padding: 0px 20px;
-}
-
-#sparkling {
-  position: relative;
-  bottom: 0;
-  font-family: "Roboto";
-  color: #b4b1b1;
-}
+/* special styles for the form */
 
 .campos input {
   border-radius: 30px;
@@ -104,59 +12,13 @@
   border: none;
 }
 
-#country,
-#state {
-  width: 185px;
-}
-
-#cadastrar {
-  width: 120px;
-  height: 40px;
-  padding: 12px;
-  border-radius: 30px;
-  background-color: #c4c4c4;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  margin: 0px auto;
-
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  font-size: 0.9em;
-  border: none;
-  overflow: hidden;
-  color: #ffffff;
-  transition: all 0.2s;
-}
-
-#cadastrar:hover {
-  transform: scale(1.1);
-  background-color: #2562ff !important;
-  color: white;
-  font-weight: 500;
-}
-
 .campos input::placeholder {
   color: #ffffff;
 }
 
-.titulos {
-  width: 90%;
-  padding: 15px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.listagem {
-  position: relative;
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+#country,
+#state {
+  width: 185px;
 }
 
 #horizon {

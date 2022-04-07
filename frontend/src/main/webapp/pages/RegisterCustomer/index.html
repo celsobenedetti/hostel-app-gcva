@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../styles/back-button.css" />
     <link rel="stylesheet" href="../../styles/error-banner.css" />
     <link rel="stylesheet" href="../../styles/load.css" />
+    <link rel="stylesheet" href="../../styles/form-page.css" />
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script
       type="text/javascript"
@@ -16,20 +17,20 @@
     <script type="text/javascript" src="../../scripts/banner.js"></script>
     <script type="text/javascript" src="./script.js"></script>
   </head>
-  <body id="register-main" onload="init ()">
-    <section id="header-1">
+  <body class="form-main" onload="init ()">
+    <section class="section-left">
       <div class="titulos">
-        <h1 id="titulo">Cadastrar</h1>
-        <p id="hospede">hóspede</p>
+        <h1 class="titulo1">Cadastrar</h1>
+        <p class="titulo2">hóspede</p>
       </div>
-      <p id="descricao">
+      <p class="description">
         Faça o login e tenha acesso às funcionalidades de gerenciamento do
         hostel.
       </p>
 
       <div></div>
 
-      <div class="listagem">
+      <div class="bottom-text-section-left">
         <!--back-button component-->
         <a id="lista" href="../ListCustomers/index.html">
           <button type="button" name="button" class="back-button">
@@ -42,11 +43,11 @@
         </a>
         <!--back-button component-->
         <br />
-        <div id="sparkling"><a>Sparkling Water Hostel</a></div>
+        <div id="spark"><a>Sparkling Water Hostel</a></div>
       </div>
     </section>
 
-    <section id="header-2">
+    <section class="section-right">
       <form id="registerForm" class="campos">
         <input
           type="text"
@@ -93,7 +94,7 @@
 
         <br />
         <br />
-        <button id="cadastrar" type="submit">Cadastrar</button>
+        <button class="submit-button" id="cadastrar" type="submit">Cadastrar</button>
       </form>
     </section>
   </body>
