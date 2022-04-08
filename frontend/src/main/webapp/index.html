@@ -9,12 +9,16 @@
     <meta name="author" content="Sparkling Water Hostel">
     <meta name="robots" content="index, follow">
     <meta name="revisit-after" content="7 days">
+    <meta name="theme-color" content="#2562FF">
+
     <title>Home</title>
-    
+
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
     <link rel="stylesheet" href="./styles/global.css" />
     <link rel="stylesheet" href="./styles/error-banner.css" />
     <link rel="stylesheet" href="./styles/home-page.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+
     <script type="text/javascript" src="https://unpkg.com/axios@0.26.1/dist/axios.min.js"></script>
     <script type="text/javascript" src="./scripts/Auth.js"></script>
     <script type="text/javascript" src="./scripts/banner.js"></script>
@@ -31,13 +35,13 @@
       function showLoginOrLogoutButton(){
         if (Auth.isLoggedIn()) {
           document.getElementById("login-or-logout-button").innerHTML = `
-            <button class="botaoE" type="button" name="logout" class="more-button" onclick="Auth.logout()">
+            <button class="botaoE" type="button" name="logout" style="background: #AA2020" class="more-button" onclick="Auth.logout()">
               Logout
             </button>
           `;
         } else {
           document.getElementById("login-or-logout-button").innerHTML = `
-            <button class="botaoE" type="button" name="login" class="more-button" onclick="window.location.href='./pages/Login/index.html'">
+            <button class="botaoE" type="button" name="login" style="background: #20AA20" class="more-button" onclick="window.location.href='./pages/Login/index.html'">
               Login
             </button>
           `;
@@ -49,30 +53,31 @@
       }
     </script>
   </head>
-  <body onload="init ()">
+  <body id="home-main" onload="init ()">
     <div class="homeCabeca">
       <div class="homeSubCabeca">
         <div id="login-or-logout-button"></div>
         <button class="botaoD" onclick="linkCustomers()">Customers</button>
-        
+
         <center>
-          <center class="titulo">Sparklin Water</center>
-          <br>
+          <center class="titulo">Sparkling Water</center>
+          <br/>
           <center class="subtitulo"> Hostel </center>
         </center>
       </div>
-           
+
       <br><br><br><br><br><br>
       <center class="experience"> The experience of a lifetime </center>
       <br><br><br><br><br><br>
 
+      <section>
     <div class="textBoxLeft">
       <h2>Sparklin Water Hostel</h2>
       <p class="infoText">The hostel Sparklink Water is a Fictitious hostel located in Caxambu-MG, Brazil. Caxambu is a small town (its population in 2020 was estimated at 22,000), renowned for its spa which has twelve sources of sparking mineral water flowing 24 hours a day and cold-water geyser
 
 Caxambu is the only place in the world with 12 mineral water springs, each with different chemical properties</p>
     </div>
-      
+
     <div class="textBoxRight">
       <h2>How to get to the hostel?</h2>
       <p class="infoText">
@@ -81,23 +86,28 @@ Caxambu is the only place in the world with 12 mineral water springs, each with 
 Caxambu is the only place in the world with 12 mineral water springs, each with different chemical properties</p>
     </div>
   </div>
-    
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    
+
+
       <div class="textBoxLeft">
         <h2>Park</h2>
         <p class="infoText">The water park is the main attraction in the town.</p>
         <img src='./images/caxambu.jpg' alt="Bathhouse" style="width:90%;height:90%;"></img>
         <p class="infoText">Bath-house located at the waterpark.</p>
     </div>
-    
+
     <div class="textBoxRight">
       <h2>Famous tourism quotes</h2>
       <p class="infoText">
         "Never go on trips with anyone you don't love." Ernest Hemingway
       "To travel is to discover that everyone is wrong about other countries." Aldous Huxley</p>
     </div>
-    <br><br><br><br><br><br><br><br>
-
+  </section>
+    <footer style="position: static; bottom: 0;">
+      <p>&copy Team 2 - Trabalho GCVA</p>
+      <a href="https://github.com/celso-patiri/hostel-app-gcva.git"
+        ><button type="button" style="background: none; border: none">
+          <img src="./icons/github.svg" width="20" /></button
+      ></a>
+    </footer>
   </body>
 </html>

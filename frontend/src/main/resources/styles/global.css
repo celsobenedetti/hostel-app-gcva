@@ -10,6 +10,7 @@
   outline: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -41,4 +42,3 @@ button:hover {
   border-radius: 5px;
   background: #0047FF;
 }
-

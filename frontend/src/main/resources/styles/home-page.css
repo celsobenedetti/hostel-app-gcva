@@ -1,57 +1,70 @@
+#home-main {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+#home-main section {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
 .homeSubCabeca {
-  /*width: 100%;
-    margin:-2px;*/
-  /*border-width: medium;
-    border-style: solid;*/
-  background: #1c4fd2;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .homeCabeca {
+  position: relative;
   width: 100%;
   height: 500px;
   /*margin: -4px;*/
   /*background: #2562FF;*/
   background-image: url("../images/bolhas.png");
   background-size: cover;
+  background-attachment: fixed;
+  padding-top: 10px;
+
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.textBoxLeft {
-  width: 35%;
+.textBoxLeft, .textBoxRight {
+  position: relative;
+  width: 40%;
   float: left;
-  margin-left: 5%;
+  margin: 30px 5%;
   background: white;
   box-shadow: 5px 4px 5px black;
   outline-style: inset;
   outline-color: black;
   outline-width: 2px;
+  padding: 10px;
+  color: #2562FF;
+  font-family: "Poppins", sans-serif !important;
 }
 
 .textBoxRight {
-  width: 35%;
   float: right;
-  margin-right: 5%;
-  background: white;
-  box-shadow: 5px 4px 5px black;
-  outline-style: inset;
-  outline-color: black;
-  outline-width: 2px;
 }
-
 .infoText {
-  font-size: 20px;
-  font-family: "Serif";
-  font-style: normal;
+  position: relative;
+  font-size: 15px;
+  color: rgba(0,0,0, 0.85) !important;
+  font-family: "Roboto", sans-serif;
   color: black;
+
 }
 
 .botaoE,
 .botaoD {
   position: absolute;
   top: 10px;
-  width: 150px;
-  height: 46px;
-  border-radius: 23px;
-  background: rgb(210, 210, 210);
+  width: 130px;
+  height: 40px;
+  border-radius: 20px;
   color: white;
 
   font-family: "Roboto", sans-serif;
@@ -59,43 +72,46 @@
   font-size: 1em;
   border: none;
   overflow: hidden;
+  transition: all .2s;
 }
 
 .botaoD {
-  right: 10px;
+  background: #6082FF;
+  right: 20px;
 }
 
 .botaoE {
-  left: 10px;
+  left: 20px;
 }
 
 .botaoE:hover,
 .botaoD:hover {
   background: #0d3eb9;
+  transform: scale(1.05) !important;
 }
 
 .titulo {
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 1em;
+  font-size: 2em;
   border: none;
   overflow: hidden;
   color: white;
 }
 
 .subtitulo {
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 3em;
+  font-size: 1.5em;
   border: none;
   overflow: hidden;
   color: white;
 }
 
 .experience {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  font-size: 2em;
+  font-size: 1.2em;
   border: none;
   overflow: hidden;
   color: white;
