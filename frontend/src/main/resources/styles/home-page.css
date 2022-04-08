@@ -1,106 +1,102 @@
-.homeSubCabeca{
-    /*width: 100%;
+.homeSubCabeca {
+  /*width: 100%;
     margin:-2px;*/
-    /*border-width: medium;
+  /*border-width: medium;
     border-style: solid;*/
-    background: #1c4fd2;
-  }
-  
-  .homeCabeca{
-    width: 100%;
-    height: 500px;
-    /*margin: -4px;*/
-    /*background: #2562FF;*/
-    background-image: url('../images/bolhas.png');
-    background-size: cover;
-  }
-  
-  .textBoxLeft{
-    width: 35%;
-    float: left;
-    margin-left: 5%;
-    background: white;
-    box-shadow: 5px 4px 5px black;
-    outline-style: inset;
-    outline-color: black;
-    outline-width: 2px;
-  }
-  
-  .textBoxRight{
-    width: 35%;
-    float: right;
-    margin-right: 5%;
-    background: white;
-    box-shadow: 5px 4px 5px black;
-    outline-style: inset;
-    outline-color: black;
-    outline-width: 2px;
-  }
-  
-  .infoText{
-    font-size: 20px;
-      font-family: "Serif";
-    font-style: normal;
-    color: black;
-  }
-  
-  .botaoE{
-    margin-top: 10px;
-    margin-left: 10px;
-    width: 150px;
-    height: 46px;
-    border-radius: 23px;
-    background: rgb(210, 210, 210);
-    color: white;
-    float: left;
-   
-    font-family: "Roboto", sans-serif;
-    font-weight: 600;
-    font-size: 1em;
-    border: none;
-    overflow: hidden;
-  }
-  
-  .botaoD{
-    margin-top: 10px;
-    margin-right: 10px;
-    width: 150px;
-    height: 46px;
-    border-radius: 23px;
-    background: rgb(210, 210, 210);
-    color: white;
-    float: right;
-   
-    font-family: "Roboto", sans-serif;
-    font-weight: 600;
-    font-size: 1em;
-    border: none;
-    overflow: hidden;
-  }
-  
-  .titulo{
-    font-family: "Roboto", sans-serif;
-    font-weight: 600;
-    font-size: 5em;
-    border: none;
-    overflow: hidden;
-    color: white;
-  }
-  
-  .subtitulo{
-    font-family: "Roboto", sans-serif;
-    font-weight: 600;
-    font-size: 3em;
-    border: none;
-    overflow: hidden;
-    color: white;
-  }
-  
-  .experience{
-    font-family: "Roboto", sans-serif;
-    font-weight: 600;
-    font-size: 2em;
-    border: none;
-    overflow: hidden;
-    color: white;
-  }
+  background: #1c4fd2;
+}
+
+.homeCabeca {
+  width: 100%;
+  height: 500px;
+  /*margin: -4px;*/
+  /*background: #2562FF;*/
+  background-image: url("../images/bolhas.png");
+  background-size: cover;
+}
+
+.textBoxLeft {
+  width: 35%;
+  float: left;
+  margin-left: 5%;
+  background: white;
+  box-shadow: 5px 4px 5px black;
+  outline-style: inset;
+  outline-color: black;
+  outline-width: 2px;
+}
+
+.textBoxRight {
+  width: 35%;
+  float: right;
+  margin-right: 5%;
+  background: white;
+  box-shadow: 5px 4px 5px black;
+  outline-style: inset;
+  outline-color: black;
+  outline-width: 2px;
+}
+
+.infoText {
+  font-size: 20px;
+  font-family: "Serif";
+  font-style: normal;
+  color: black;
+}
+
+.botaoE,
+.botaoD {
+  position: absolute;
+  top: 10px;
+  width: 150px;
+  height: 46px;
+  border-radius: 23px;
+  background: rgb(210, 210, 210);
+  color: white;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 1em;
+  border: none;
+  overflow: hidden;
+}
+
+.botaoD {
+  right: 10px;
+}
+
+.botaoE {
+  left: 10px;
+}
+
+.botaoE:hover,
+.botaoD:hover {
+  background: #0d3eb9;
+}
+
+.titulo {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 1em;
+  border: none;
+  overflow: hidden;
+  color: white;
+}
+
+.subtitulo {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 3em;
+  border: none;
+  overflow: hidden;
+  color: white;
+}
+
+.experience {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 2em;
+  border: none;
+  overflow: hidden;
+  color: white;
+}

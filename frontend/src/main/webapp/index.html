@@ -22,17 +22,37 @@
 
       function linkCustomers(){
         if (Auth.isLoggedIn()) {
-          window.location.href = "./ListCustomers/index.html";
+          window.location.href = "./pages/ListCustomers/index.html";
         } else {
           showBanner("error", "Você precisa estar logado para acessar esta página!");
         }
       }
+
+      function showLoginOrLogoutButton(){
+        if (Auth.isLoggedIn()) {
+          document.getElementById("login-or-logout-button").innerHTML = `
+            <button class="botaoE" type="button" name="logout" class="more-button" onclick="Auth.logout()">
+              Logout
+            </button>
+          `;
+        } else {
+          document.getElementById("login-or-logout-button").innerHTML = `
+            <button class="botaoE" type="button" name="login" class="more-button" onclick="window.location.href='./pages/Login/index.html'">
+              Login
+            </button>
+          `;
+        }
+      }
+
+      function init(){
+        showLoginOrLogoutButton();
+      }
     </script>
   </head>
-  <body>
+  <body onload="init ()">
     <div class="homeCabeca">
       <div class="homeSubCabeca">
-        <button class="botaoE" onclick="window.location.href='./pages/Login/index.html'">Login</button>
+        <div id="login-or-logout-button"></div>
         <button class="botaoD" onclick="linkCustomers()">Customers</button>
         
         <center>
