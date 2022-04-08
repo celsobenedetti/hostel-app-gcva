@@ -1,6 +1,6 @@
 # hostel-app-gcva
 
-<!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, status do projeto e informações de licença aqui--->
+<!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos . Você pode querer incluir dependências, status do projeto e informações de licença aqui--->
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/celso-patiri/hostel-app-gcva?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/celso-patiri/hostel-app-gcva?style=for-the-badge)
