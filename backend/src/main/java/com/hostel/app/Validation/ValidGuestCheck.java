@@ -13,22 +13,23 @@ public class ValidGuestCheck implements ConstraintValidator<ValidGuest, Guest> {
         ConstraintValidator.super.initialize(constraintAnnotation);
     }
 
+    public boolean comparePattern(String string, String regex){
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(string);
+        return matcher.matches();
+    }
+
     @Override
     public boolean isValid(Guest guest, ConstraintValidatorContext constraintValidatorContext) {
         //validade email
-        String regex = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
+        String regexEmail = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
                 + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(guest.getEmail());
-        boolean emailValidate = matcher.matches();
+        boolean emailValidate = this.comparePattern(guest.getEmail(), regexEmail);
 
         //validate phone number US format
-        regex = "^(?:(?:\\+?1\\s*(?:[.-]\\s*)?)?(?:\\(\\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\\s*\\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\\s*(?:[.-]\\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\\s*(?:[.-]\\s*)?([0-9]{4})(?:\\s*(?:#|x\\.?|ext\\.?|extension)\\s*(\\d+))?$";
-        pattern = Pattern.compile(regex);
-        matcher = pattern.matcher(guest.getPhone());
-        boolean phoneValidade = matcher.matches();
+        String regexPhone = "^(?:(?:\\+?1\\s*(?:[.-]\\s*)?)?(?:\\(\\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\\s*\\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\\s*(?:[.-]\\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\\s*(?:[.-]\\s*)?([0-9]{4})(?:\\s*(?:#|x\\.?|ext\\.?|extension)\\s*(\\d+))?$";
+        boolean phoneValidade = this.comparePattern(guest.getPhone(), regexPhone);
 
         return emailValidate && phoneValidade;
-
     }
 }
