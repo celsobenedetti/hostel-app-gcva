@@ -1,7 +1,4 @@
-const request = axios.create({
-  baseURL: "http://localhost:8080/backend/api/guests/",
-});
-Auth.validate(request);
+Auth.validate(api);
 
 function showRegisterLoad(control) {
   var registerButton = document.getElementById("cadastrar");
@@ -34,7 +31,7 @@ async function handleSubmit(e) {
 
   showRegisterLoad(true);
   try {
-    const response = await request.post("", data);
+    const response = await api.post("guests/", data);
     showBanner("success", "");
     cleanFormFields(e.target.elements);
   } catch (e) {
