@@ -105,7 +105,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
       </a>
     </td>
     <td align="center">
-          <a href="#">
+          <a href="https://github.com/GuilhermeAGouveia">
             <img width=100 src="https://avatars.githubusercontent.com/u/81968354?v=4" width="100px;" alt="Foto do Steve Jobs"/><br>
             <sub>
               <b>Guilherme Gouveia</b>
@@ -125,6 +125,22 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
             <img width=100 src="https://avatars.githubusercontent.com/u/58240821?v=4" width="100px;" alt="Foto do Steve Jobs"/><br>
             <sub>
               <b>Gabriel Pereira</b>
+            </sub>
+          </a>
+        </td>
+        <td align="center">
+          <a href="https://github.com/SprigganCS">
+            <img width=100 src="https://avatars.githubusercontent.com/u/69917573?v=4"/><br>
+            <sub>
+              <b>André Neves</b>
+            </sub>
+          </a>
+        </td>
+        <td align="center">
+          <a href="#">
+            <img width=100 src="https://avatars.githubusercontent.com/u/69917573?v=4"/><br>
+            <sub>
+              <b>André Neves</b>
             </sub>
           </a>
         </td>
