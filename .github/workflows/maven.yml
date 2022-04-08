@@ -23,4 +23,4 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build backend with Maven
-      run: mvn -B backend-1.0-SNAPSHOT --file ./backend/pom.xml
+      run: mvn -B package --file ./backend/pom.xml
