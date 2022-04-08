@@ -20,8 +20,8 @@ class Auth {
   }
 
   async login(username, password) {
-    const { data: response } = await axios.post(
-      "http://localhost:8080/backend/api/user/login",
+    const { data: response } = await api.post(
+      "user/login",
       {
         username,
         password,

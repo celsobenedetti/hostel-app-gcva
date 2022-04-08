@@ -1,7 +1,4 @@
-const request = axios.create({
-  baseURL: "http://localhost:8080/backend/api/guests",
-});
-Auth.validate(request);
+Auth.validate(api);
 
 // centraliza o acesso a elementos html
 const htmlElements = () => ({
@@ -158,7 +155,7 @@ function controlPageLoad(control) {
 //Função atribuida ao listener onclick dos alteradores de status no html
 async function handleUpdateStatus(id, status) {
   controlPageLoad(true);
-  await request.get(`updateStatus?id=${id}&status=${status}`);
+  await api.get(`guests/updateStatus?id=${id}&status=${status}`);
   controlPageLoad(false);
 }
 
@@ -167,7 +164,7 @@ async function handleDeleteCustomer(id) {
   let { totalCustomers } = htmlElements();
   controlPageLoad(true);
   try {
-    await request.delete(`${id}`);
+    await api.delete(`guests/${id}`);
     document.getElementById("tableLine" + id).style.display = "none";
     showTotalCustomers(parseInt(totalCustomers.innerText) - 1);
   } catch (e) {
@@ -205,7 +202,7 @@ class Pagination {
       ? `search?q=${this.searchString}&page=${this.pageNumber}&size=${this.pageSize}`
       : `?page=${this.pageNumber}&size=${this.pageSize}`;
     console.log(stringRequest);
-    let { data: page } = await request.get(stringRequest);
+    let { data: page } = await api.get(`guests/${stringRequest}`);
     this.elements = page.result;
     return page;
   };
