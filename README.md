@@ -140,7 +140,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
           <a href="#">
             <img width=100 src="https://avatars.githubusercontent.com/u/69917573?v=4"/><br>
             <sub>
-              <b>André Neves</b>
+              <b>Arthur Klimas</b>
             </sub>
           </a>
         </td>
