@@ -1,5 +1,5 @@
 class Auth {
-  isAuth = () => !!sessionStorage.getItem("userCredencial");
+  static isLoggedIn = () => !!sessionStorage.getItem("userCredencial");
 
   setAuth(userCredencial) {
     sessionStorage.setItem("userCredencial", JSON.stringify(userCredencial));
