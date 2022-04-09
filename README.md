@@ -24,7 +24,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 * JDK 8+ :heavy_check_mark:
 * Apache Maven v3+ :heavy_check_mark:
 
-## 🚀 Getting started
+## 🚀 Get started
 
 Para instalar o hostel-app-gcva, siga estas etapas:
 
