@@ -81,7 +81,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 <table>
   <tr>
     <td align="center">
-      <a href="#">
+      <a href="https://github.com/caioreius">
         <img width=100 src="https://avatars.githubusercontent.com/u/87735654?v=4" width="100px;" alt="Foto do Iuri Silva no GitHub"/><br>
         <sub>
           <b>Caio Eduardo</b>
@@ -89,7 +89,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
       </a>
     </td>
     <td align="center">
-      <a href="#">
+      <a href="https://github.com/celso-patiri">
         <img width=100 src="https://avatars.githubusercontent.com/u/56320155?v=4" width="100px;" alt="Foto do Mark Zuckerberg"/><br>
         <sub>
           <b>Celso Patiri</b>
