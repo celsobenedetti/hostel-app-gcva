@@ -113,7 +113,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
           </a>
         </td>
     <td align="center">
-          <a href="#">
+          <a href="https://github.com/Joaovitron999">
             <img width=100 src="https://avatars.githubusercontent.com/u/61283617?v=4" alt="Foto do Steve Jobs"/><br>
             <sub>
               <b>João Fonseca</b>
@@ -121,7 +121,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
           </a>
         </td>
     <td align="center">
-          <a href="#">
+          <a href="https://github.com/gabrielpereira3">
             <img width=100 src="https://avatars.githubusercontent.com/u/58240821?v=4" width="100px;" alt="Foto do Steve Jobs"/><br>
             <sub>
               <b>Gabriel Pereira</b>
