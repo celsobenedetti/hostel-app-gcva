@@ -137,8 +137,8 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
           </a>
         </td>
         <td align="center">
-          <a href="#">
-            <img width=100 src="https://avatars.githubusercontent.com/u/69917573?v=4"/><br>
+          <a href="https://github.com/abk507">
+            <img width=100 src="https://avatars.githubusercontent.com/u/54085399?v=4"/><br>
             <sub>
               <b>Arthur Klimas</b>
             </sub>
